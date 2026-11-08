@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자판기 구매·렌탈·설치 상담 | 자판기마켓</title>
+<meta name="description" content="음료·커피·스낵·아이스크림 자판기와 무인키오스크 구매·렌탈·설치를 한 번에 상담하세요. 설치 장소에 맞는 기종과 품목 구성, 카드 결제, 운영 관리까지 자판기마켓이 함께합니다. 상담 010-5577-3067">
+<meta name="keywords" content="자판기, 자판기 구매, 자판기 렌탈, 자판기 설치, 음료자판기, 커피자판기, 스낵자판기, 아이스크림자판기, 무인자판기, 무인키오스크, 무인창업, 자판기 창업">
+<meta property="og:type" content="website">
+<meta property="og:title" content="자판기 구매·렌탈·설치 상담 | 자판기마켓">
+<meta property="og:description" content="빈 공간이 24시간 매장이 됩니다. 자판기 기종 선택부터 설치·운영까지 무료 상담.">
+<meta property="og:site_name" content="자판기마켓">
+<meta property="og:locale" content="ko_KR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='4' width='44' height='56' rx='6' fill='%230f2a4a'/%3E%3Crect x='16' y='10' width='22' height='34' rx='2' fill='%23ffb020'/%3E%3Crect x='42' y='14' width='6' height='10' rx='1' fill='%23fff'/%3E%3Crect x='16' y='48' width='32' height='6' rx='2' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "자판기마켓",
+  "description": "자판기·무인키오스크 구매, 렌탈, 설치, 운영 상담",
+  "telephone": "+82-10-5577-3067",
+  "areaServed": "KR",
+  "priceRange": "상담 후 견적"
+}
+</script>
+<style>
+  :root{
+    --navy:#0f2a4a; --navy2:#173b66; --ink:#1b2430; --sub:#5b6676; --line:#e4e8ee;
+    --bg:#ffffff; --soft:#f4f7fb; --accent:#ff8a00; --accent2:#ffb020; --mint:#14b8a6;
+    --radius:18px; --shadow:0 10px 30px rgba(15,42,74,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;word-break:keep-all;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img,svg{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  section{padding:88px 0}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--accent);margin-bottom:10px}
+  h2{font-size:clamp(26px,3.6vw,38px);line-height:1.3;font-weight:900;color:var(--navy);letter-spacing:-.02em}
+  h2 em{font-style:normal;color:var(--accent)}
+  .lead{color:var(--sub);font-size:17px;margin-top:14px;max-width:640px}
+  .center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:16px;transition:.2s;border:0;cursor:pointer;font-family:inherit}
+  .btn-main{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(255,138,0,.35)}
+  .btn-main:hover{transform:translateY(-2px);background:#f07d00}
+  .btn-line{background:#fff;color:var(--navy);border:2px solid var(--line)}
+  .btn-line:hover{border-color:var(--navy)}
+  .btn-white{background:#fff;color:var(--navy)}
+
+  /* 머리 */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .hd{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:900;font-size:21px;color:var(--navy);letter-spacing:-.03em}
+  .logo b{color:var(--accent)}
+  #nav{display:flex;gap:26px;font-weight:500;font-size:15px}
+  #nav a:hover{color:var(--accent)}
+  .hd-call{display:flex;align-items:center;gap:10px}
+  .hd-call .tel{font-weight:900;color:var(--navy)}
+  .hd-call .btn{padding:10px 18px;font-size:14px}
+  .menu-btn{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--navy)}
+
+  /* 첫 화면 */
+  .hero{background:linear-gradient(160deg,#0f2a4a 0%,#173b66 60%,#1d4b80 100%);color:#fff;padding:80px 0 90px;overflow:hidden;position:relative}
+  .hero:after{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,176,32,.25),transparent 70%)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;position:relative;z-index:1}
+  .hero .eyebrow{color:var(--accent2)}
+  .hero h1{font-size:clamp(32px,5vw,54px);line-height:1.22;font-weight:900;letter-spacing:-.03em}
+  .hero h1 em{font-style:normal;color:var(--accent2)}
+  .hero p.sub{font-size:18px;opacity:.88;margin:20px 0 32px;max-width:540px}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .hero .btn-line:hover{border-color:#fff}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+  .chips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:999px;font-size:14px}
+  .hero-art{position:relative}
+  .hero-art .card{position:absolute;left:-30px;bottom:30px;background:#fff;color:var(--ink);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);font-size:14px}
+  .hero-art .card b{display:block;font-size:20px;color:var(--navy)}
+  .hero-art .card small{color:var(--sub)}
+
+  /* 띠 */
+  .band{background:var(--accent);color:#fff;font-weight:700;overflow:hidden;white-space:nowrap;padding:14px 0}
+  .band div{display:inline-block;animation:flow 30s linear infinite}
+  .band span{margin:0 26px}
+  @keyframes flow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* 고민 */
+  .worry{background:var(--soft)}
+  .worry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  .worry-grid div{background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);font-weight:500}
+  .worry-grid div:before{content:"“";display:block;font-size:40px;line-height:1;color:var(--accent2);font-weight:900}
+  .answer{margin-top:34px;text-align:center;font-size:20px;font-weight:700;color:var(--navy)}
+  .answer em{font-style:normal;color:var(--accent)}
+
+  /* 기종 */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  .machine{border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.2s;display:flex;flex-direction:column;background:#fff}
+  .machine:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent}
+  .machine .ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:30px;background:var(--soft);margin-bottom:16px}
+  .machine h3{font-size:20px;color:var(--navy)}
+  .machine p{color:var(--sub);font-size:15px;margin:8px 0 14px;flex:1}
+  .machine ul{list-style:none;font-size:14px;margin-bottom:18px}
+  .machine li{padding-left:18px;position:relative;margin:4px 0}
+  .machine li:before{content:"✓";position:absolute;left:0;color:var(--mint);font-weight:900}
+  .machine a.pick{font-weight:700;color:var(--accent);font-size:15px}
+
+  /* 장소 */
+  .places{background:var(--navy);color:#fff}
+  .places h2{color:#fff}
+  .places .lead{color:rgba(255,255,255,.75)}
+  .place-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+  .place{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px}
+  .place .e{font-size:30px}
+  .place h3{font-size:18px;margin:10px 0 6px}
+  .place p{font-size:14px;color:rgba(255,255,255,.72)}
+
+  /* 구매·렌탈 */
+  .compare{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .plan{border-radius:var(--radius);padding:32px;border:2px solid var(--line);background:#fff}
+  .plan.hot{border-color:var(--accent);position:relative}
+  .plan.hot:before{content:"초기 비용 부담 ↓";position:absolute;top:-14px;left:28px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px}
+  .plan h3{font-size:24px;color:var(--navy)}
+  .plan .for{color:var(--sub);margin:6px 0 18px}
+  .plan dl{display:grid;grid-template-columns:96px 1fr;gap:10px 14px;font-size:15px}
+  .plan dt{font-weight:700;color:var(--navy)}
+  .plan dd{color:var(--ink)}
+  .note{margin-top:18px;font-size:14px;color:var(--sub);text-align:center}
+
+  /* 차별점 */
+  .why{background:var(--soft)}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  .why-grid div{background:#fff;border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow)}
+  .why-grid .n{font-size:14px;font-weight:900;color:var(--accent)}
+  .why-grid h3{font-size:19px;color:var(--navy);margin:8px 0}
+  .why-grid p{color:var(--sub);font-size:15px}
+
+  /* 과정 */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px;counter-reset:s}
+  .step{position:relative;padding:26px 20px;border-radius:var(--radius);border:1px solid var(--line);background:#fff}
+  .step:before{counter-increment:s;content:"STEP 0" counter(s);font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--accent)}
+  .step h3{font-size:18px;color:var(--navy);margin:8px 0 6px}
+  .step p{font-size:14px;color:var(--sub)}
+
+  /* 계산기 */
+  .calc{background:linear-gradient(160deg,#fff7ec,#fff)}
+  .calc-box{margin-top:40px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:34px}
+  .field{margin-bottom:20px}
+  .field label{display:flex;justify-content:space-between;font-weight:700;color:var(--navy);margin-bottom:8px;font-size:15px}
+  .field label output{color:var(--accent)}
+  input[type=range]{width:100%;accent-color:var(--accent)}
+  .result{background:var(--navy);color:#fff;border-radius:20px;padding:30px;display:flex;flex-direction:column;justify-content:center}
+  .result small{opacity:.75}
+  .result .big{font-size:clamp(30px,4vw,42px);font-weight:900;color:var(--accent2);margin:6px 0 16px}
+  .result ul{list-style:none;font-size:15px;border-top:1px solid rgba(255,255,255,.15);padding-top:14px}
+  .result li{display:flex;justify-content:space-between;margin:6px 0}
+  .result .btn{margin-top:22px;justify-content:center}
+
+  /* 결제 */
+  .pay-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  .pay-grid div{text-align:center;padding:26px 16px;border-radius:var(--radius);background:var(--soft)}
+  .pay-grid .e{font-size:34px}
+  .pay-grid h3{font-size:17px;color:var(--navy);margin:8px 0 4px}
+  .pay-grid p{font-size:14px;color:var(--sub)}
+
+  /* FAQ */
+  .faq{background:var(--soft)}
+  .faq-list{max-width:820px;margin:40px auto 0}
+  details{background:#fff;border-radius:14px;margin-bottom:12px;box-shadow:0 4px 14px rgba(15,42,74,.06)}
+  summary{cursor:pointer;padding:20px 24px;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";font-size:22px;color:var(--accent);line-height:1}
+  details[open] summary:after{content:"−"}
+  details p{padding:0 24px 22px;color:var(--sub)}
+
+  /* 신청 */
+  .apply{background:var(--navy);color:#fff}
+  .apply-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+  .apply h2{color:#fff}
+  .apply .lead{color:rgba(255,255,255,.78)}
+  .big-tel{display:inline-block;margin-top:28px;font-size:34px;font-weight:900;color:var(--accent2)}
+  .apply .points{list-style:none;margin-top:24px}
+  .apply .points li{margin:8px 0;padding-left:26px;position:relative}
+  .apply .points li:before{content:"✓";position:absolute;left:0;color:var(--accent2);font-weight:900}
+  form{background:#fff;color:var(--ink);border-radius:24px;padding:32px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form label{display:block;font-weight:700;font-size:14px;color:var(--navy);margin:14px 0 6px}
+  form label i{color:var(--accent);font-style:normal}
+  input,select,textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  textarea{min-height:96px;resize:vertical}
+  .agree{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--sub);margin:16px 0}
+  .agree input{width:auto;margin-top:4px}
+  form .btn{width:100%;justify-content:center;font-size:17px}
+  #done{display:none;margin-top:14px;background:#e9fbf7;color:#0d7a6d;border-radius:12px;padding:14px;font-weight:700;text-align:center}
+  .safe{font-size:13px;color:var(--sub);margin-top:10px;text-align:center}
+
+  footer{background:#0a1d33;color:rgba(255,255,255,.65);padding:44px 0 110px;font-size:14px}
+  footer .logo{color:#fff;margin-bottom:12px}
+  .ft{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  footer a:hover{color:#fff}
+  .ft-menu{display:flex;gap:18px;flex-wrap:wrap}
+  .kw{margin-top:26px;font-size:12px;color:rgba(255,255,255,.35)}
+
+  /* 휴대폰 아래 고정 */
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+  .bar .wrap{display:flex;align-items:center;gap:12px;height:72px}
+  .bar .msg{flex:1;font-size:15px}
+  .bar .msg b{color:var(--navy)}
+  .bar a.t{font-weight:900;color:var(--navy);white-space:nowrap}
+  .bar .btn{padding:12px 22px;font-size:15px}
+
+  @media (max-width:1000px){
+    #nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+    #nav.open{display:flex}
+    #nav a{padding:15px 20px;border-top:1px solid var(--line)}
+    .menu-btn{display:block}
+    .hd-call .tel{display:none}
+    .hero-grid,.apply-grid,.calc-box{grid-template-columns:1fr}
+    .hero-art{max-width:340px;margin:10px auto 0}
+    .worry-grid,.place-grid,.why-grid,.pay-grid{grid-template-columns:repeat(2,1fr)}
+    .grid3{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    section{padding:64px 0}
+    .wrap{padding:0 16px}
+    .hero{padding:56px 0 64px}
+    .hero-art .card{left:0}
+    .grid3,.compare,.row,.steps{grid-template-columns:1fr}
+    .worry-grid,.place-grid,.why-grid,.pay-grid{grid-template-columns:1fr 1fr;gap:10px}
+    .worry-grid div,.place,.why-grid div{padding:18px}
+    .calc-box,form{padding:22px}
+    .plan{padding:24px}
+    .plan dl{grid-template-columns:80px 1fr}
+    .bar .msg{display:none}
+    .bar .wrap{justify-content:space-between}
+    .bar .btn{flex:1;justify-content:center}
+    .hd-call .btn{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <a href="#top" class="logo" aria-label="자판기마켓 처음으로">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="4" width="44" height="56" rx="6" fill="#0f2a4a"/><rect x="16" y="10" width="22" height="34" rx="2" fill="#ffb020"/><rect x="42" y="14" width="6" height="10" rx="1" fill="#fff"/><rect x="16" y="48" width="32" height="6" rx="2" fill="#fff"/></svg>
+      자판기<b>마켓</b>
+    </a>
+    <nav id="nav">
+      <a href="#machines">자판기 종류</a>
+      <a href="#places">설치 장소</a>
+      <a href="#plans">구매·렌탈</a>
+      <a href="#process">진행 과정</a>
+      <a href="#calc">수익 계산</a>
+      <a href="#faq">자주 묻는 질문</a>
+    </nav>
+    <div class="hd-call">
+      <a class="tel" href="tel:01055773067">📞 010-5577-3067</a>
+      <a class="btn btn-main" href="#apply">무료 상담</a>
+      <button class="menu-btn" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- 첫 화면 -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">VENDING MACHINE · BUY · RENTAL · INSTALL</span>
+      <h1>남는 자리 한 칸이<br><em>24시간 매장</em>이 됩니다</h1>
+      <p class="sub">음료·커피·스낵·아이스크림 자판기부터 무인키오스크까지. 설치할 공간을 먼저 보고, 잘 팔릴 기종과 품목을 골라 드려요. 구매도 렌탈도 한 번에 상담하세요.</p>
+      <div class="hero-btns">
+        <a class="btn btn-main" href="#apply">내 공간 무료 상담받기 →</a>
+        <a class="btn btn-line" href="tel:01055773067">📞 010-5577-3067</a>
+      </div>
+      <div class="chips">
+        <span>🕒 24시간 무인 운영</span>
+        <span>💳 카드·간편결제</span>
+        <span>🔁 구매 / 렌탈 선택</span>
+        <span>🇰🇷 전국 설치 상담</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <!-- 자판기 그림 (직접 그린 그림) -->
+      <svg viewBox="0 0 300 420" role="img" aria-label="음료 자판기 그림">
+        <defs>
+          <linearGradient id="body" x1="0" x2="1"><stop offset="0" stop-color="#ff8a00"/><stop offset="1" stop-color="#ffb020"/></linearGradient>
+          <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8f4ff"/><stop offset="1" stop-color="#cfe6ff"/></linearGradient>
+        </defs>
+        <ellipse cx="150" cy="408" rx="120" ry="10" fill="rgba(0,0,0,.25)"/>
+        <rect x="40" y="10" width="220" height="392" rx="18" fill="url(#body)"/>
+        <rect x="40" y="10" width="220" height="40" rx="18" fill="#0f2a4a"/>
+        <rect x="40" y="34" width="220" height="16" fill="#0f2a4a"/>
+        <text x="150" y="37" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-weight="900" font-size="17" fill="#ffb020">자판기마켓</text>
+        <rect x="56" y="64" width="146" height="250" rx="8" fill="url(#glass)"/>
+        <g>
+          <!-- 1단 캔 -->
+          <g fill="#ef4444"><rect x="66" y="76" width="22" height="40" rx="5"/></g>
+          <g fill="#14b8a6"><rect x="94" y="76" width="22" height="40" rx="5"/></g>
+          <g fill="#3b82f6"><rect x="122" y="76" width="22" height="40" rx="5"/></g>
+          <g fill="#f59e0b"><rect x="150" y="76" width="22" height="40" rx="5"/></g>
+          <rect x="176" y="76" width="18" height="40" rx="5" fill="#8b5cf6"/>
+          <rect x="60" y="118" width="138" height="4" fill="#9fb6cf"/>
+          <!-- 2단 병 -->
+          <rect x="68" y="134" width="18" height="44" rx="6" fill="#22c55e"/><rect x="73" y="128" width="8" height="8" fill="#16a34a"/>
+          <rect x="96" y="134" width="18" height="44" rx="6" fill="#0ea5e9"/><rect x="101" y="128" width="8" height="8" fill="#0284c7"/>
+          <rect x="124" y="134" width="18" height="44" rx="6" fill="#f43f5e"/><rect x="129" y="128" width="8" height="8" fill="#e11d48"/>
+          <rect x="152" y="134" width="18" height="44" rx="6" fill="#eab308"/><rect x="157" y="128" width="8" height="8" fill="#ca8a04"/>
+          <rect x="178" y="134" width="16" height="44" rx="6" fill="#64748b"/>
+          <rect x="60" y="180" width="138" height="4" fill="#9fb6cf"/>
+          <!-- 3단 과자 -->
+          <rect x="64" y="194" width="40" height="46" rx="4" fill="#fb923c"/><rect x="70" y="204" width="28" height="10" rx="2" fill="#fff" opacity=".7"/>
+          <rect x="110" y="194" width="40" height="46" rx="4" fill="#a855f7"/><rect x="116" y="204" width="28" height="10" rx="2" fill="#fff" opacity=".7"/>
+          <rect x="156" y="194" width="38" height="46" rx="4" fill="#10b981"/><rect x="162" y="204" width="26" height="10" rx="2" fill="#fff" opacity=".7"/>
+          <rect x="60" y="242" width="138" height="4" fill="#9fb6cf"/>
+          <!-- 4단 컵 -->
+          <rect x="70" y="256" width="26" height="44" rx="4" fill="#f97316"/><rect x="104" y="256" width="26" height="44" rx="4" fill="#06b6d4"/><rect x="138" y="256" width="26" height="44" rx="4" fill="#ec4899"/><rect x="170" y="256" width="24" height="44" rx="4" fill="#84cc16"/>
+        </g>
+        <rect x="56" y="64" width="40" height="250" rx="8" fill="#fff" opacity=".25"/>
+        <!-- 결제부 -->
+        <rect x="212" y="64" width="36" height="250" rx="8" fill="#0f2a4a"/>
+        <rect x="218" y="74" width="24" height="16" rx="3" fill="#7dd3fc"/>
+        <g fill="#ffb020"><circle cx="224" cy="104" r="4"/><circle cx="236" cy="104" r="4"/><circle cx="224" cy="116" r="4"/><circle cx="236" cy="116" r="4"/><circle cx="224" cy="128" r="4"/><circle cx="236" cy="128" r="4"/></g>
+        <rect x="218" y="146" width="24" height="16" rx="3" fill="#fff"/>
+        <text x="230" y="158" text-anchor="middle" font-size="9" font-weight="900" fill="#0f2a4a">CARD</text>
+        <rect x="218" y="172" width="24" height="24" rx="3" fill="#fff"/>
+        <g fill="#0f2a4a"><rect x="221" y="175" width="7" height="7"/><rect x="232" y="175" width="7" height="7"/><rect x="221" y="186" width="7" height="7"/><rect x="232" y="188" width="4" height="4"/></g>
+        <text x="230" y="208" text-anchor="middle" font-size="7" fill="#fff">QR · PAY</text>
+        <!-- 꺼내는 곳 -->
+        <rect x="56" y="330" width="192" height="50" rx="8" fill="#0f2a4a"/>
+        <rect x="70" y="342" width="164" height="26" rx="5" fill="#173b66"/>
+      </svg>
+      <div class="card"><small>운영 시간</small><b>24시간 · 365일</b><small>사람 없이도 매출이 생겨요</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true"><div>
+  <span>음료 자판기</span><span>커피 자판기</span><span>스낵 자판기</span><span>아이스크림 자판기</span><span>복합 자판기</span><span>무인키오스크</span><span>구매 · 렌탈 · 설치 · 관리</span>
+  <span>음료 자판기</span><span>커피 자판기</span><span>스낵 자판기</span><span>아이스크림 자판기</span><span>복합 자판기</span><span>무인키오스크</span><span>구매 · 렌탈 · 설치 · 관리</span>
+</div></div>
+
+<!-- 고민 -->
+<section class="worry">
+  <div class="wrap center">
+    <span class="eyebrow">CHECK</span>
+    <h2>자판기, 알아보다가 <em>이런 고민</em> 하셨죠?</h2>
+    <div class="worry-grid">
+      <div>우리 가게(사무실)에 어떤 자판기가 맞는지 모르겠어요</div>
+      <div>사는 게 나은지, 렌탈이 나은지 헷갈려요</div>
+      <div>설치하면 실제로 얼마나 팔릴지 궁금해요</div>
+      <div>고장 나거나 물건 채우는 건 누가 하나요?</div>
+    </div>
+    <p class="answer">공간 확인부터 기종·품목 추천, 설치, 운영 관리까지 <em>자판기마켓이 한 번에</em> 정리해 드립니다.</p>
+  </div>
+</section>
+
+<!-- 자판기 종류 -->
+<section id="machines">
+  <div class="wrap">
+    <span class="eyebrow">MACHINES</span>
+    <h2>공간과 손님에 맞춰 고르는<br><em>자판기 종류</em></h2>
+    <p class="lead">같은 자판기라도 놓는 곳에 따라 잘 팔리는 품목이 달라요. 아래에서 관심 있는 기종을 눌러 상담을 남겨 주세요.</p>
+    <div class="grid3">
+      <div class="machine"><div class="ico">🥤</div><h3>음료 자판기</h3><p>캔·페트 음료, 생수, 이온음료. 가장 많이 찾는 기본 자판기예요.</p><ul><li>냉장 / 냉·온 겸용</li><li>사무실·공장·헬스장 인기</li></ul><a class="pick" href="#apply" data-machine="음료 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">☕</div><h3>커피 자판기</h3><p>원두 커피, 라떼, 차, 코코아까지. 한 잔씩 바로 만들어 드려요.</p><ul><li>원두 / 믹스 방식 선택</li><li>대기 공간·병원·학원 인기</li></ul><a class="pick" href="#apply" data-machine="커피 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">🍫</div><h3>스낵 자판기</h3><p>과자, 초콜릿, 컵라면, 간편식. 출출할 때 바로 꺼내 먹는 자판기.</p><ul><li>나선형 / 칸 방식</li><li>스터디카페·PC방·기숙사 인기</li></ul><a class="pick" href="#apply" data-machine="스낵 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">🍦</div><h3>아이스크림 자판기</h3><p>냉동 보관이 되는 전용 자판기. 여름철 매출이 특히 좋아요.</p><ul><li>냉동 전용 설계</li><li>캠핑장·펜션·수영장 인기</li></ul><a class="pick" href="#apply" data-machine="아이스크림 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">🧃</div><h3>복합 자판기</h3><p>음료와 스낵을 한 대에. 자리는 좁은데 품목은 다양하게 놓고 싶을 때.</p><ul><li>냉장 + 상온 칸 함께</li><li>작은 공간에 알맞음</li></ul><a class="pick" href="#apply" data-machine="복합 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">🖥️</div><h3>무인키오스크 · 무인매장</h3><p>주문·결제 키오스크와 여러 대를 묶은 무인매장 구성까지 상담해요.</p><ul><li>무인 아이스크림·편의점형</li><li>소자본 무인창업</li></ul><a class="pick" href="#apply" data-machine="무인키오스크·무인매장">이 기종 상담하기 →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 설치 장소 -->
+<section class="places" id="places">
+  <div class="wrap">
+    <span class="eyebrow">PLACES</span>
+    <h2>사람이 오래 머무는 곳이면<br>어디든 설치할 수 있어요</h2>
+    <p class="lead">출입하는 사람 수, 머무는 시간, 주변 편의점 거리를 함께 보고 알맞은 기종을 추천해 드려요.</p>
+    <div class="place-grid">
+      <div class="place"><div class="e">🏢</div><h3>사무실 · 오피스</h3><p>직원 복지용 음료·커피</p></div>
+      <div class="place"><div class="e">🏭</div><h3>공장 · 물류센터</h3><p>교대 근무, 야간에도 이용</p></div>
+      <div class="place"><div class="e">🏋️</div><h3>헬스장 · 사우나</h3><p>물·이온음료·단백질 음료</p></div>
+      <div class="place"><div class="e">📚</div><h3>학원 · 스터디카페</h3><p>커피·스낵·간식</p></div>
+      <div class="place"><div class="e">🏠</div><h3>아파트 · 오피스텔</h3><p>공용 공간·커뮤니티 시설</p></div>
+      <div class="place"><div class="e">🏥</div><h3>병원 · 약국</h3><p>대기실 음료·커피</p></div>
+      <div class="place"><div class="e">⛺</div><h3>캠핑장 · 펜션</h3><p>얼음·아이스크림·간식</p></div>
+      <div class="place"><div class="e">🏫</div><h3>학교 · 관공서</h3><p>복도·로비·휴게 공간</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 구매·렌탈 -->
+<section id="plans">
+  <div class="wrap center">
+    <span class="eyebrow">BUY or RENTAL</span>
+    <h2>살까, 빌릴까? <em>상황에 맞게</em> 고르세요</h2>
+    <p class="lead">두 방식 모두 상담할 수 있어요. 예산과 운영 계획을 들어 보고 더 맞는 쪽을 솔직하게 알려 드립니다.</p>
+    <div class="compare" style="text-align:left">
+      <div class="plan">
+        <h3>💰 구매</h3>
+        <p class="for">오래 운영할 계획이고, 내 자산으로 갖고 싶다면</p>
+        <dl>
+          <dt>초기 비용</dt><dd>기계 값을 한 번에 냄</dd>
+          <dt>매달 비용</dt><dd>렌탈료 없음</dd>
+          <dt>소유</dt><dd>내 자판기 (위치 옮기기·되팔기 자유)</dd>
+          <dt>잘 맞는 분</dt><dd>자판기 사업을 길게 보는 분, 여러 대 운영</dd>
+        </dl>
+      </div>
+      <div class="plan hot">
+        <h3>📅 렌탈 · 임대</h3>
+        <p class="for">처음이라 부담 없이 시작해 보고 싶다면</p>
+        <dl>
+          <dt>초기 비용</dt><dd>적거나 거의 없음 (조건에 따라 다름)</dd>
+          <dt>매달 비용</dt><dd>정해진 렌탈료</dd>
+          <dt>관리</dt><dd>계약에 따라 점검·수리 포함 가능</dd>
+          <dt>잘 맞는 분</dt><dd>첫 자판기, 매출을 먼저 확인해 보고 싶은 분</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="note">※ 기종·대수·계약 기간에 따라 금액이 달라져요. 정확한 견적은 상담 때 바로 안내해 드립니다.</p>
+  </div>
+</section>
+
+<!-- 차별점 -->
+<section class="why">
+  <div class="wrap">
+    <span class="eyebrow">WHY US</span>
+    <h2>자판기마켓에 맡기면<br><em>이게 달라요</em></h2>
+    <div class="why-grid">
+      <div><span class="n">01</span><h3>공간부터 봐요</h3><p>무작정 기계를 권하지 않아요. 설치할 곳의 사람 흐름을 먼저 보고 맞는 기종을 골라요.</p></div>
+      <div><span class="n">02</span><h3>팔리는 품목 구성</h3><p>장소마다 잘 나가는 상품이 달라요. 처음 채울 품목과 가격대를 함께 짜 드려요.</p></div>
+      <div><span class="n">03</span><h3>구매·렌탈 둘 다</h3><p>한쪽만 파는 곳이 아니라서, 내 상황에 더 유리한 방식을 비교해 드려요.</p></div>
+      <div><span class="n">04</span><h3>설치 후에도 함께</h3><p>결제 설정, 재고 채우기 요령, 고장 접수까지 운영하면서 생기는 일을 도와드려요.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 진행 과정 -->
+<section id="process">
+  <div class="wrap">
+    <span class="eyebrow">PROCESS</span>
+    <h2>상담부터 첫 매출까지<br><em>이렇게 진행돼요</em></h2>
+    <div class="steps">
+      <div class="step"><h3>상담 신청</h3><p>전화나 아래 신청서로 공간과 원하는 점을 알려 주세요.</p></div>
+      <div class="step"><h3>공간 확인</h3><p>설치 위치, 전기, 크기, 이용하는 사람을 확인해요.</p></div>
+      <div class="step"><h3>기종·견적 제안</h3><p>알맞은 기종과 품목, 구매·렌탈 견적을 비교해 드려요.</p></div>
+      <div class="step"><h3>설치 · 세팅</h3><p>자판기를 놓고 카드 결제·가격·상품을 세팅해요.</p></div>
+      <div class="step"><h3>운영 · 관리</h3><p>운영 시작! 재고·점검·고장 문의는 계속 도와드려요.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 수익 계산기 -->
+<section class="calc" id="calc">
+  <div class="wrap">
+    <span class="eyebrow">PROFIT CALCULATOR</span>
+    <h2>자판기 한 대, <em>한 달에 얼마</em> 남을까?</h2>
+    <p class="lead">막대를 움직여 보세요. 대략적인 월 수익을 바로 계산해 드려요.</p>
+    <div class="calc-box">
+      <div>
+        <div class="field"><label>하루 판매 개수 <output id="o1"></output></label><input type="range" id="r1" min="5" max="200" step="5" value="40"></div>
+        <div class="field"><label>평균 판매 가격 <output id="o2"></output></label><input type="range" id="r2" min="500" max="5000" step="100" value="1500"></div>
+        <div class="field"><label>상품 원가 비율 <output id="o3"></output></label><input type="range" id="r3" min="20" max="80" step="5" value="50"></div>
+        <div class="field"><label>한 달 고정비 (렌탈료·전기세 등) <output id="o4"></output></label><input type="range" id="r4" min="0" max="500000" step="10000" value="100000"></div>
+      </div>
+      <div class="result">
+        <small>한 달(30일) 예상 순수익</small>
+        <div class="big" id="net">-</div>
+        <ul>
+          <li><span>월 매출</span><b id="sales">-</b></li>
+          <li><span>상품 원가</span><b id="cost">-</b></li>
+          <li><span>고정비</span><b id="fixed">-</b></li>
+        </ul>
+        <a class="btn btn-main" href="#apply">내 공간으로 정확히 계산받기 →</a>
+      </div>
+    </div>
+    <p class="note">※ 참고용 계산이에요. 실제 수익은 설치 장소, 품목, 계절, 계약 조건에 따라 달라집니다.</p>
+  </div>
+</section>
+
+<!-- 결제·관리 -->
+<section id="pay">
+  <div class="wrap center">
+    <span class="eyebrow">PAYMENT &amp; SYSTEM</span>
+    <h2>현금 없어도 OK, <em>멀리서도</em> 관리해요</h2>
+    <p class="lead">요즘 손님은 대부분 카드나 휴대폰으로 결제해요. 기종에 따라 아래 기능을 함께 쓸 수 있어요.</p>
+    <div class="pay-grid">
+      <div><div class="e">💳</div><h3>카드 결제</h3><p>신용·체크카드, 교통카드</p></div>
+      <div><div class="e">📱</div><h3>간편결제</h3><p>삼성페이·카카오페이 등</p></div>
+      <div><div class="e">🔳</div><h3>QR 결제</h3><p>휴대폰으로 찍어서 결제</p></div>
+      <div><div class="e">📊</div><h3>원격 관리</h3><p>매출·재고를 휴대폰으로 확인</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">FAQ</span><h2>자주 묻는 질문</h2></div>
+    <div class="faq-list">
+      <details><summary>자판기 한 대 놓는 데 자리가 얼마나 필요한가요?</summary><p>기종마다 다르지만 보통 폭 1m 안팎, 깊이 1m 정도 공간과 콘센트 하나면 설치할 수 있어요. 작은 공간이라면 복합 자판기나 소형 기종을 추천해 드려요.</p></details>
+      <details><summary>구매와 렌탈 중 뭐가 더 좋아요?</summary><p>오래 운영할 계획이면 구매가, 처음이라 부담을 줄이고 싶다면 렌탈이 잘 맞아요. 상담 때 두 가지 견적을 나란히 비교해 드립니다.</p></details>
+      <details><summary>상품은 누가 채워 넣나요?</summary><p>직접 채우셔도 되고, 지역과 조건에 따라 관리를 맡기는 방법도 있어요. 처음 채울 품목 구성과 가격은 함께 정해 드려요.</p></details>
+      <details><summary>고장이 나면 어떻게 하나요?</summary><p>전화로 접수해 주시면 증상을 확인하고 수리를 연결해 드려요. 렌탈은 계약에 따라 점검·수리가 포함될 수 있어요.</p></details>
+      <details><summary>자판기 사업에 허가나 신고가 필요한가요?</summary><p>파는 상품에 따라 다릅니다. 포장된 음료·과자만 판다면 비교적 간단하고, 커피처럼 그 자리에서 만드는 자판기는 영업 신고가 필요할 수 있어요. 상담 때 필요한 절차를 안내해 드려요.</p></details>
+      <details><summary>전국 어디든 설치되나요?</summary><p>네, 지역에 상관없이 상담을 받아요. 설치 지역을 남겨 주시면 가능한 일정과 방법을 알려 드릴게요.</p></details>
+      <details><summary>상담 비용이 있나요?</summary><p>아니요. 상담과 견적은 무료이고, 상담 후 꼭 계약하지 않으셔도 괜찮아요.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 상담 신청 -->
+<section class="apply" id="apply">
+  <div class="wrap apply-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--accent2)">FREE CONSULTING</span>
+      <h2>내 공간에 맞는 자판기,<br>무료로 상담받으세요</h2>
+      <p class="lead">신청서를 남겨 주시면 확인하는 대로 바로 연락드려요. 급하시면 전화 주세요.</p>
+      <a class="big-tel" href="tel:01055773067">📞 010-5577-3067</a>
+      <ul class="points">
+        <li>상담·견적 무료</li>
+        <li>구매·렌탈 견적 함께 비교</li>
+        <li>설치 장소에 맞는 기종·품목 추천</li>
+      </ul>
+    </div>
+    <form id="applyForm">
+      <div class="row">
+        <div><label>이름 <i>*</i></label><input name="name" required placeholder="홍길동"></div>
+        <div><label>연락처 <i>*</i></label><input name="phone" type="tel" required placeholder="010-0000-0000"></div>
+      </div>
+      <div class="row">
+        <div><label>설치 지역 <i>*</i></label><input name="region" required placeholder="예: 서울 강남구"></div>
+        <div><label>설치 장소</label>
+          <select name="place">
+            <option>사무실·오피스</option><option>공장·물류센터</option><option>헬스장·사우나</option><option>학원·스터디카페·PC방</option><option>아파트·오피스텔</option><option>병원·약국</option><option>캠핑장·펜션</option><option>학교·관공서</option><option>무인매장 창업</option><option>기타</option>
+          </select></div>
+      </div>
+      <div class="row">
+        <div><label>관심 기종</label>
+          <select name="machine">
+            <option>아직 모르겠어요</option><option>음료 자판기</option><option>커피 자판기</option><option>스낵 자판기</option><option>아이스크림 자판기</option><option>복합 자판기</option><option>무인키오스크·무인매장</option>
+          </select></div>
+        <div><label>원하는 방식</label>
+          <select name="type">
+            <option>상담 후 결정</option><option>구매</option><option>렌탈·임대</option>
+          </select></div>
+      </div>
+      <label>문의 내용</label>
+      <textarea name="memo" placeholder="예: 직원 30명 사무실 휴게실에 음료 자판기 1대 놓고 싶어요"></textarea>
+      <label class="agree"><input type="checkbox" required> 개인정보(이름·연락처·지역)를 상담 목적으로 수집·이용하는 데 동의합니다.</label>
+      <button class="btn btn-main" type="submit">무료 상담 신청하기 →</button>
+      <div id="done">신청이 접수됐어요! 곧 연락드릴게요. 😊</div>
+      <p class="safe">남겨 주신 정보는 상담에만 쓰고, 상담이 끝나면 지웁니다.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="logo">자판기<b style="color:var(--accent2)">마켓</b></div>
+        <p>자판기 구매 · 렌탈 · 설치 · 운영 상담</p>
+        <p>대표번호 <a href="tel:01055773067">010-5577-3067</a></p>
+      </div>
+      <div class="ft-menu">
+        <a href="#machines">자판기 종류</a><a href="#places">설치 장소</a><a href="#plans">구매·렌탈</a><a href="#calc">수익 계산</a><a href="#faq">자주 묻는 질문</a><a href="#apply">상담 신청</a>
+      </div>
+    </div>
+    <p class="kw">음료자판기 · 커피자판기 · 스낵자판기 · 아이스크림자판기 · 복합자판기 · 무인자판기 · 자판기 구매 · 자판기 렌탈 · 자판기 설치 · 무인키오스크 · 무인창업</p>
+    <p style="margin-top:14px">© 2026 자판기마켓. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="bar">
+  <div class="wrap">
+    <span class="msg"><b>우리 공간엔 어떤 자판기가 맞을까?</b> 무료로 상담받아 보세요</span>
+    <a class="t" href="tel:01055773067">📞 전화</a>
+    <a href="#apply" class="btn btn-main">무료 상담</a>
+  </div>
+</div>
+
+<script>
+  // 휴대폰 메뉴: 누르면 닫기
+  document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', () => document.getElementById('nav').classList.remove('open')));
+
+  // 기종 카드의 "상담하기" → 신청서 관심 기종 미리 고르기
+  document.querySelectorAll('[data-machine]').forEach(a => a.addEventListener('click', () => {
+    document.querySelector('#applyForm select[name="machine"]').value = a.dataset.machine;
+  }));
+
+  // 수익 계산기
+  const won = n => Math.round(n).toLocaleString('ko-KR') + '원';
+  function calc() {
+    const q = +r1.value, p = +r2.value, c = +r3.value / 100, f = +r4.value;
+    const sales = q * p * 30, cost = sales * c, net = sales - cost - f;
+    o1.textContent = q + '개'; o2.textContent = won(p); o3.textContent = r3.value + '%'; o4.textContent = won(f);
+    document.getElementById('sales').textContent = won(sales);
+    document.getElementById('cost').textContent = '- ' + won(cost);
+    document.getElementById('fixed').textContent = '- ' + won(f);
+    document.getElementById('net').textContent = won(net);
+  }
+  ['r1','r2','r3','r4'].forEach(id => document.getElementById(id).addEventListener('input', calc));
+  calc();
+
+  // 신청 폼 → 티쳐포유 구글 시트(같은 Apps Script, "자판기마켓" 탭) + 메일 알림
+  // 티쳐포유 스크립트는 영문 키(name·phone·memo 등)만 읽으므로 한글 키와 같이 보낸다
+  var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx7cFmG03i-dpfj7IWynETu5Z2af_dla1qaA-Kt8KbFF28H-4Re684VpmO7vBSeaILU/exec';
+  var SITE_NAME = '자판기마켓';
+  document.getElementById('applyForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    var f = e.target, v = n => (f.elements[n].value || '').trim();
+    var memo = '[' + SITE_NAME + '] 지역: ' + v('region') + ' / 장소: ' + v('place') + ' / 기종: ' + v('machine') + ' / 방식: ' + v('type') + (v('memo') ? ' / ' + v('memo') : '');
+    var payload = {
+      sheet: '자판기마켓', _form: SITE_NAME, _time: new Date().toLocaleString('ko-KR'),
+      사이트: SITE_NAME, 이름: v('name'), 연락처: v('phone'), 설치지역: v('region'), 설치장소: v('place'),
+      관심기종: v('machine'), 원하는방식: v('type'), 문의내용: v('memo'), 신청페이지: location.href,
+      name: '[' + SITE_NAME + '] ' + v('name'), phone: v('phone'), subject: v('machine'), grade: v('place'), memo: memo
+    };
+    var btn = f.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = '접수 중…';
+    try {
+      await fetch(SHEET_ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body: new URLSearchParams(payload).toString() });
+    } catch (_) {}
+    document.getElementById('done').style.display = 'block';
+    btn.textContent = '신청 완료 ✓';
+    f.reset();
+  });
+</script>
+<script src="visit.js" defer></script>
+</body>
+</html>
