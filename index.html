@@ -15,6 +15,10 @@
 <meta property="og:description" content="빈 공간이 24시간 매장이 됩니다. 자판기 기종 선택부터 설치·운영까지 무료 상담.">
 <meta property="og:site_name" content="자판기마켓">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://mooinstore.kr/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='4' width='44' height='56' rx='6' fill='%230f2a4a'/%3E%3Crect x='16' y='10' width='22' height='34' rx='2' fill='%23ffb020'/%3E%3Crect x='42' y='14' width='6' height='10' rx='1' fill='%23fff'/%3E%3Crect x='16' y='48' width='32' height='6' rx='2' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,6 +88,7 @@
   .hero-art .card{position:absolute;left:-30px;bottom:30px;background:#fff;color:var(--ink);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);font-size:14px}
   .hero-art .card b{display:block;font-size:20px;color:var(--navy)}
   .hero-art .card small{color:var(--sub)}
+  .hero-photo{width:100%;height:auto;border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.35);border:6px solid rgba(255,255,255,.12)}
 
   /* 띠 */
   .band{background:var(--accent);color:#fff;font-weight:700;overflow:hidden;white-space:nowrap;padding:14px 0}
@@ -147,6 +152,26 @@
   .step:before{counter-increment:s;content:"STEP 0" counter(s);font-size:12px;font-weight:900;letter-spacing:.1em;color:var(--accent)}
   .step h3{font-size:18px;color:var(--navy);margin:8px 0 6px}
   .step p{font-size:14px;color:var(--sub)}
+
+  /* 대표 제품 */
+  .prod-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .prod-img{width:100%;height:auto;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .feat{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}
+  .feat li{background:var(--soft);border-radius:14px;padding:14px 16px}
+  .feat b{display:block;color:var(--navy);font-size:16px}
+  .feat span{font-size:14px;color:var(--sub);line-height:1.55;display:block;margin-top:2px}
+  .spec{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:15px}
+  .spec th{width:92px;text-align:left;color:var(--navy);padding:10px 0;border-top:1px solid var(--line);vertical-align:top}
+  .spec td{padding:10px 0;border-top:1px solid var(--line)}
+  .spec small{color:var(--sub)}
+  /* 설치 사례 */
+  .cases{background:var(--soft)}
+  .case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+  .case{margin:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(15,42,74,.08)}
+  .case img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block}
+  .case figcaption{padding:10px 14px;font-size:14px;font-weight:700;color:var(--navy)}
+  .case figcaption small{display:block;font-weight:400;color:var(--sub);font-size:12px}
+  .src{margin-top:16px;font-size:13px;color:var(--sub);text-align:center}
 
   /* 계산기 */
   .calc{background:linear-gradient(160deg,#fff7ec,#fff)}
@@ -227,13 +252,17 @@
   .bar a.t{font-weight:900;color:var(--navy);white-space:nowrap}
   .bar .btn{padding:12px 22px;font-size:15px}
 
-  @media (max-width:1000px){
+  @media (max-width:1180px){
     #nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
     #nav.open{display:flex}
     #nav a{padding:15px 20px;border-top:1px solid var(--line)}
     .menu-btn{display:block}
     .hd-call .tel{display:none}
-    .hero-grid,.apply-grid,.calc-box{grid-template-columns:1fr}
+  }
+  @media (max-width:1000px){
+    .hero-grid,.apply-grid,.calc-box,.prod-grid{grid-template-columns:1fr}
+    .case-grid{grid-template-columns:repeat(3,1fr)}
+    .prod-grid{gap:30px}
     .hero-art{max-width:340px;margin:10px auto 0}
     .worry-grid,.place-grid,.why-grid,.pay-grid{grid-template-columns:repeat(2,1fr)}
     .grid3{grid-template-columns:repeat(2,1fr)}
@@ -244,7 +273,8 @@
     .wrap{padding:0 16px}
     .hero{padding:56px 0 64px}
     .hero-art .card{left:0}
-    .grid3,.compare,.row,.steps{grid-template-columns:1fr}
+    .grid3,.compare,.row,.steps,.feat{grid-template-columns:1fr}
+    .case-grid{grid-template-columns:1fr 1fr;gap:10px}
     .worry-grid,.place-grid,.why-grid,.pay-grid{grid-template-columns:1fr 1fr;gap:10px}
     .worry-grid div,.place,.why-grid div{padding:18px}
     .calc-box,form{padding:22px}
@@ -266,11 +296,11 @@
       자판기<b>마켓</b>
     </a>
     <nav id="nav">
+      <a href="#product">대표 제품</a>
+      <a href="#cases">설치 사례</a>
       <a href="#machines">자판기 종류</a>
       <a href="#places">설치 장소</a>
       <a href="#plans">구매·렌탈</a>
-      <a href="#process">진행 과정</a>
-      <a href="#calc">수익 계산</a>
       <a href="#faq">자주 묻는 질문</a>
       <a href="guide/">자판기 가이드</a>
     </nav>
@@ -302,55 +332,7 @@
       </div>
     </div>
     <div class="hero-art">
-      <!-- 자판기 그림 (직접 그린 그림) -->
-      <svg viewBox="0 0 300 420" role="img" aria-label="음료 자판기 그림">
-        <defs>
-          <linearGradient id="body" x1="0" x2="1"><stop offset="0" stop-color="#ff8a00"/><stop offset="1" stop-color="#ffb020"/></linearGradient>
-          <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8f4ff"/><stop offset="1" stop-color="#cfe6ff"/></linearGradient>
-        </defs>
-        <ellipse cx="150" cy="408" rx="120" ry="10" fill="rgba(0,0,0,.25)"/>
-        <rect x="40" y="10" width="220" height="392" rx="18" fill="url(#body)"/>
-        <rect x="40" y="10" width="220" height="40" rx="18" fill="#0f2a4a"/>
-        <rect x="40" y="34" width="220" height="16" fill="#0f2a4a"/>
-        <text x="150" y="37" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-weight="900" font-size="17" fill="#ffb020">자판기마켓</text>
-        <rect x="56" y="64" width="146" height="250" rx="8" fill="url(#glass)"/>
-        <g>
-          <!-- 1단 캔 -->
-          <g fill="#ef4444"><rect x="66" y="76" width="22" height="40" rx="5"/></g>
-          <g fill="#14b8a6"><rect x="94" y="76" width="22" height="40" rx="5"/></g>
-          <g fill="#3b82f6"><rect x="122" y="76" width="22" height="40" rx="5"/></g>
-          <g fill="#f59e0b"><rect x="150" y="76" width="22" height="40" rx="5"/></g>
-          <rect x="176" y="76" width="18" height="40" rx="5" fill="#8b5cf6"/>
-          <rect x="60" y="118" width="138" height="4" fill="#9fb6cf"/>
-          <!-- 2단 병 -->
-          <rect x="68" y="134" width="18" height="44" rx="6" fill="#22c55e"/><rect x="73" y="128" width="8" height="8" fill="#16a34a"/>
-          <rect x="96" y="134" width="18" height="44" rx="6" fill="#0ea5e9"/><rect x="101" y="128" width="8" height="8" fill="#0284c7"/>
-          <rect x="124" y="134" width="18" height="44" rx="6" fill="#f43f5e"/><rect x="129" y="128" width="8" height="8" fill="#e11d48"/>
-          <rect x="152" y="134" width="18" height="44" rx="6" fill="#eab308"/><rect x="157" y="128" width="8" height="8" fill="#ca8a04"/>
-          <rect x="178" y="134" width="16" height="44" rx="6" fill="#64748b"/>
-          <rect x="60" y="180" width="138" height="4" fill="#9fb6cf"/>
-          <!-- 3단 과자 -->
-          <rect x="64" y="194" width="40" height="46" rx="4" fill="#fb923c"/><rect x="70" y="204" width="28" height="10" rx="2" fill="#fff" opacity=".7"/>
-          <rect x="110" y="194" width="40" height="46" rx="4" fill="#a855f7"/><rect x="116" y="204" width="28" height="10" rx="2" fill="#fff" opacity=".7"/>
-          <rect x="156" y="194" width="38" height="46" rx="4" fill="#10b981"/><rect x="162" y="204" width="26" height="10" rx="2" fill="#fff" opacity=".7"/>
-          <rect x="60" y="242" width="138" height="4" fill="#9fb6cf"/>
-          <!-- 4단 컵 -->
-          <rect x="70" y="256" width="26" height="44" rx="4" fill="#f97316"/><rect x="104" y="256" width="26" height="44" rx="4" fill="#06b6d4"/><rect x="138" y="256" width="26" height="44" rx="4" fill="#ec4899"/><rect x="170" y="256" width="24" height="44" rx="4" fill="#84cc16"/>
-        </g>
-        <rect x="56" y="64" width="40" height="250" rx="8" fill="#fff" opacity=".25"/>
-        <!-- 결제부 -->
-        <rect x="212" y="64" width="36" height="250" rx="8" fill="#0f2a4a"/>
-        <rect x="218" y="74" width="24" height="16" rx="3" fill="#7dd3fc"/>
-        <g fill="#ffb020"><circle cx="224" cy="104" r="4"/><circle cx="236" cy="104" r="4"/><circle cx="224" cy="116" r="4"/><circle cx="236" cy="116" r="4"/><circle cx="224" cy="128" r="4"/><circle cx="236" cy="128" r="4"/></g>
-        <rect x="218" y="146" width="24" height="16" rx="3" fill="#fff"/>
-        <text x="230" y="158" text-anchor="middle" font-size="9" font-weight="900" fill="#0f2a4a">CARD</text>
-        <rect x="218" y="172" width="24" height="24" rx="3" fill="#fff"/>
-        <g fill="#0f2a4a"><rect x="221" y="175" width="7" height="7"/><rect x="232" y="175" width="7" height="7"/><rect x="221" y="186" width="7" height="7"/><rect x="232" y="188" width="4" height="4"/></g>
-        <text x="230" y="208" text-anchor="middle" font-size="7" fill="#fff">QR · PAY</text>
-        <!-- 꺼내는 곳 -->
-        <rect x="56" y="330" width="192" height="50" rx="8" fill="#0f2a4a"/>
-        <rect x="70" y="342" width="164" height="26" rx="5" fill="#173b66"/>
-      </svg>
+      <img class="hero-photo" src="img/hero-machine.jpg" width="560" height="800" alt="병원 로비에 설치된 키오스크 결합형 스마트 자판기" fetchpriority="high">
       <div class="card"><small>운영 시간</small><b>24시간 · 365일</b><small>사람 없이도 매출이 생겨요</small></div>
     </div>
   </div>
@@ -373,6 +355,34 @@
       <div>고장 나거나 물건 채우는 건 누가 하나요?</div>
     </div>
     <p class="answer">공간 확인부터 기종·품목 추천, 설치, 운영 관리까지 <em>자판기마켓이 한 번에</em> 정리해 드립니다.</p>
+  </div>
+</section>
+
+<!-- 대표 제품 -->
+<section id="product">
+  <div class="wrap prod-grid">
+    <div>
+      <img class="prod-img" src="img/product-size.jpg" width="900" height="900" loading="lazy" alt="스마트밴딩머신 크기 폭 95.5cm 높이 197cm, 키오스크 결제 화면과 배출구">
+    </div>
+    <div>
+      <span class="eyebrow">MAIN PRODUCT</span>
+      <h2>키오스크 결합형<br><em>스마트밴딩머신</em></h2>
+      <p class="lead">제조사 MTS해원이 직접 기획·개발한 무인 자판기예요. 큰 터치 화면으로 상품을 고르고 카드·간편결제로 바로 사요.</p>
+      <ul class="feat">
+        <li><b>24인치 키오스크 화면</b><span>한국어·영어·중국어·일본어 4개 언어, 상품별 상세 안내</span></li>
+        <li><b>바퀴형 · 디자인 변경</b><span>옮기기 쉬운 바퀴형. 기본 화이트, 랩핑으로 색·로고 변경 가능(비용 별도)</span></li>
+        <li><b>칸 구성 맞춤</b><span>음료·과자·컵라면·잡화·어메니티까지, 상품에 맞춰 트레이 조절</span></li>
+        <li><b>관리 프로그램 무료</b><span>상품·매출 현황을 웹에서 실시간으로 확인</span></li>
+        <li><b>매장 홍보 영상</b><span>화면에 내 매장 홍보 영상·이미지 광고를 무료로 송출</span></li>
+        <li><b>물품 반품 제도</b><span>MTS해원에서 산 물품은 유통기한 1달 전까지 반품 접수(특가 제품 제외)</span></li>
+      </ul>
+      <table class="spec">
+        <tr><th>크기</th><td>폭 95.5cm × 높이 197cm (배출구 35 × 18cm)</td></tr>
+        <tr><th>결제</th><td>신용·체크카드, 삼성페이 등 간편결제</td></tr>
+        <tr><th>판매 상품</th><td>캔·페트 음료(2L까지 대형 배출 가능), 과자, 컵라면, 잡화 등<br><small>※ 유리병 제품 제외</small></td></tr>
+      </table>
+      <a class="btn btn-main" href="#apply" data-machine="스마트밴딩머신(키오스크형)">이 제품 상담하기 →</a>
+    </div>
   </div>
 </section>
 
@@ -409,6 +419,30 @@
       <div class="place"><div class="e">⛺</div><h3>캠핑장 · 펜션</h3><p>얼음·아이스크림·간식</p></div>
       <div class="place"><div class="e">🏫</div><h3>학교 · 관공서</h3><p>복도·로비·휴게 공간</p></div>
     </div>
+  </div>
+</section>
+
+<!-- 설치 사례 -->
+<section class="cases" id="cases">
+  <div class="wrap">
+    <span class="eyebrow">INSTALLATION</span>
+    <h2>호텔부터 학교까지,<br><em>실제 설치된 모습</em>이에요</h2>
+    <p class="lead">공간 분위기를 해치지 않는 깔끔한 화이트 디자인이라 로비·카페·학교 어디에나 잘 어울려요.</p>
+    <div class="case-grid">
+      <figure class="case"><img src="img/case-hotel-jeju.jpg" loading="lazy" width="720" height="720" alt="호텔 로비에 설치된 스마트 자판기"><figcaption>호텔 로비<small>제주</small></figcaption></figure>
+      <figure class="case"><img src="img/case-hospital.jpg" loading="lazy" width="720" height="720" alt="병원에 설치된 스마트 자판기"><figcaption>병원<small>로비</small></figcaption></figure>
+      <figure class="case"><img src="img/case-school.jpg" loading="lazy" width="720" height="720" alt="학교에 설치된 스마트 자판기"><figcaption>학교<small>휴게 공간</small></figcaption></figure>
+      <figure class="case"><img src="img/case-adventure.jpg" loading="lazy" width="720" height="720" alt="실내 체험 시설에 설치된 스마트 자판기"><figcaption>실내 체험 시설<small>경기 양주</small></figcaption></figure>
+      <figure class="case"><img src="img/case-pingpong.jpg" loading="lazy" width="720" height="720" alt="탁구장에 설치된 스마트 자판기"><figcaption>탁구장<small>운동 시설</small></figcaption></figure>
+      <figure class="case"><img src="img/case-unmanned-store.jpg" loading="lazy" width="720" height="720" alt="무인매장에 설치된 스마트 자판기"><figcaption>무인매장<small>대전</small></figcaption></figure>
+      <figure class="case"><img src="img/case-office.jpg" loading="lazy" width="720" height="720" alt="회사 사옥에 설치된 스마트 자판기"><figcaption>회사 사옥<small>사무실</small></figcaption></figure>
+      <figure class="case"><img src="img/case-cafe-sokcho.jpg" loading="lazy" width="720" height="720" alt="카페에 설치된 스마트 자판기"><figcaption>카페<small>강원 속초</small></figcaption></figure>
+      <figure class="case"><img src="img/case-hotel.jpg" loading="lazy" width="720" height="720" alt="호텔에 설치된 스마트 자판기"><figcaption>호텔<small>라운지</small></figcaption></figure>
+      <figure class="case"><img src="img/case-cafe-andong.jpg" loading="lazy" width="720" height="720" alt="카페에 설치된 스마트 자판기"><figcaption>카페<small>경북 안동</small></figcaption></figure>
+      <figure class="case"><img src="img/case-shop.jpg" loading="lazy" width="720" height="720" alt="매장에 설치된 스마트 자판기"><figcaption>매장<small>라면자판기 옆</small></figcaption></figure>
+      <figure class="case"><img src="img/case-cafe.jpg" loading="lazy" width="720" height="720" alt="커피 매장에 설치된 스마트 자판기"><figcaption>커피 매장<small>입구</small></figcaption></figure>
+    </div>
+    <p class="src">※ 사진: 스마트밴딩머신 제조사 MTS해원 설치 사례</p>
   </div>
 </section>
 
@@ -534,7 +568,7 @@
   <div class="wrap">
     <div class="center"><span class="eyebrow">FAQ</span><h2>자주 묻는 질문</h2></div>
     <div class="faq-list">
-      <details><summary>자판기 한 대 놓는 데 자리가 얼마나 필요한가요?</summary><p>기종마다 다르지만 보통 폭 1m 안팎, 깊이 1m 정도 공간과 콘센트 하나면 설치할 수 있어요. 작은 공간이라면 복합 자판기나 소형 기종을 추천해 드려요.</p></details>
+      <details><summary>자판기 한 대 놓는 데 자리가 얼마나 필요한가요?</summary><p>기종마다 달라요. 대표 제품인 스마트밴딩머신은 폭 95.5cm, 높이 197cm라 폭 1m 정도 자리와 콘센트 하나면 설치할 수 있어요. 바퀴형이라 놓은 뒤에도 위치를 옮기기 쉬워요. 들어가는 길(문 폭·엘리베이터)도 함께 확인해 드려요.</p></details>
       <details><summary>구매와 렌탈 중 뭐가 더 좋아요?</summary><p>오래 운영할 계획이면 구매가, 처음이라 부담을 줄이고 싶다면 렌탈이 잘 맞아요. 상담 때 두 가지 견적을 나란히 비교해 드립니다.</p></details>
       <details><summary>상품은 누가 채워 넣나요?</summary><p>직접 채우셔도 되고, 지역과 조건에 따라 관리를 맡기는 방법도 있어요. 처음 채울 품목 구성과 가격은 함께 정해 드려요.</p></details>
       <details><summary>고장이 나면 어떻게 하나요?</summary><p>전화로 접수해 주시면 증상을 확인하고 수리를 연결해 드려요. 렌탈은 계약에 따라 점검·수리가 포함될 수 있어요.</p></details>
@@ -574,7 +608,7 @@
       <div class="row">
         <div><label>관심 기종</label>
           <select name="machine">
-            <option>아직 모르겠어요</option><option>음료 자판기</option><option>커피 자판기</option><option>스낵 자판기</option><option>아이스크림 자판기</option><option>복합 자판기</option><option>무인키오스크·무인매장</option>
+            <option>아직 모르겠어요</option><option>스마트밴딩머신(키오스크형)</option><option>음료 자판기</option><option>커피 자판기</option><option>스낵 자판기</option><option>아이스크림 자판기</option><option>복합 자판기</option><option>무인키오스크·무인매장</option>
           </select></div>
         <div><label>원하는 방식</label>
           <select name="type">
@@ -601,7 +635,7 @@
         <p>대표번호 <a href="tel:01055773067">010-5577-3067</a></p>
       </div>
       <div class="ft-menu">
-        <a href="#machines">자판기 종류</a><a href="#places">설치 장소</a><a href="#plans">구매·렌탈</a><a href="#calc">수익 계산</a><a href="#faq">자주 묻는 질문</a><a href="guide/">자판기 가이드</a><a href="#apply">상담 신청</a>
+        <a href="#product">대표 제품</a><a href="#cases">설치 사례</a><a href="#machines">자판기 종류</a><a href="#places">설치 장소</a><a href="#plans">구매·렌탈</a><a href="#calc">수익 계산</a><a href="#faq">자주 묻는 질문</a><a href="guide/">자판기 가이드</a><a href="#apply">상담 신청</a>
       </div>
     </div>
     <p class="kw">음료자판기 · 커피자판기 · 스낵자판기 · 아이스크림자판기 · 복합자판기 · 무인자판기 · 자판기 구매 · 자판기 렌탈 · 자판기 설치 · 무인키오스크 · 무인창업</p>
