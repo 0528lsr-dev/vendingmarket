@@ -31,6 +31,7 @@ HEAD = '''<!doctype html>
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
+<link rel="alternate" type="application/rss+xml" title="자판기마켓 자판기 가이드" href="https://mooinstore.kr/rss.xml">
 <meta property="og:type" content="{ogtype}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -130,6 +131,20 @@ def build():
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sm += ''.join(f'  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n' for u, d in urls) + '</urlset>\n'
     open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write(sm)
+
+    # RSS (네이버 서치어드바이저 'RSS 제출'용, 2026-11-13)
+    import datetime, email.utils
+    def rfc(d):
+        return email.utils.format_datetime(datetime.datetime.strptime(d, '%Y-%m-%d').replace(hour=9, tzinfo=datetime.timezone(datetime.timedelta(hours=9))))
+    items = ''.join(
+        f'  <item>\n    <title>{e(p["title"])}</title>\n    <link>{SITE}/guide/{p["slug"]}.html</link>\n'
+        f'    <guid>{SITE}/guide/{p["slug"]}.html</guid>\n    <description>{e(p["description"])}</description>\n'
+        f'    <category>{e(p["tag"])}</category>\n    <pubDate>{rfc(p["date"])}</pubDate>\n  </item>\n' for p in posts)
+    rss = ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n<channel>\n'
+           f'  <title>자판기마켓 자판기 가이드</title>\n  <link>{SITE}/</link>\n'
+           '  <description>자판기 구입·렌탈·임대, 설치비, 기종 고르기, 설치 장소, 무인창업 이야기</description>\n'
+           f'  <language>ko</language>\n  <lastBuildDate>{rfc(last)}</lastBuildDate>\n' + items + '</channel>\n</rss>\n')
+    open(os.path.join(ROOT, 'rss.xml'), 'w', encoding='utf-8').write(rss)
 
     # 홈 가이드 칸 (최근 6편)
     idx = os.path.join(ROOT, 'index.html')
