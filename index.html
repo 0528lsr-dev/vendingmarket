@@ -84,17 +84,26 @@
   .hero .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
   .hero .btn-line:hover{border-color:#fff}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
-  .chips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:999px;font-size:14px}
+  .chips span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);padding:8px 14px;border-radius:999px;font-size:14px}
+  .chips span:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent2)}
   .hero-art{position:relative}
-  .hero-art .card{position:absolute;left:-30px;bottom:30px;background:#fff;color:var(--ink);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);font-size:14px}
+  .hero-art .card{position:absolute;background:#fff;color:var(--ink);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);font-size:14px}
   .hero-art .card b{display:block;font-size:20px;color:var(--navy)}
   .hero-art .card small{color:var(--sub)}
-  .hero-photo{width:100%;height:auto;border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.35);border:6px solid rgba(255,255,255,.12)}
+  .hero-art{display:flex;justify-content:center}
+  .hero-art .glow{position:absolute;left:50%;top:50%;width:120%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(120,170,255,.28) 0%,rgba(120,170,255,.08) 40%,transparent 68%);pointer-events:none}
+  .hero-prod{position:relative;width:auto;max-height:540px;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+  .hero-art .card{left:auto;right:auto;padding:12px 18px;border-radius:12px}
+  .hero-art .card small{display:block;font-size:12px}
+  .hero-art .card b{font-size:18px}
+  .hero-art .c1{left:-10px;bottom:70px}
+  .hero-art .c2{right:-10px;top:60px}
 
   /* 띠 */
-  .band{background:var(--accent);color:#fff;font-weight:700;overflow:hidden;white-space:nowrap;padding:14px 0}
+  .band{background:#0a1f38;color:rgba(255,255,255,.78);font-weight:500;font-size:15px;overflow:hidden;white-space:nowrap;padding:16px 0;border-top:1px solid rgba(255,255,255,.08)}
   .band div{display:inline-block;animation:flow 30s linear infinite}
-  .band span{margin:0 26px}
+  .band span{margin:0 22px}
+  .band span:after{content:"·";margin-left:44px;color:var(--accent2)}
   @keyframes flow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* 고민 */
@@ -109,7 +118,7 @@
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
   .machine{border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.2s;display:flex;flex-direction:column;background:#fff}
   .machine:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent}
-  .machine .ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:30px;background:var(--soft);margin-bottom:16px}
+  .machine .ico{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-bottom:18px}
   .machine h3{font-size:20px;color:var(--navy)}
   .machine p{color:var(--sub);font-size:15px;margin:8px 0 14px;flex:1}
   .machine ul{list-style:none;font-size:14px;margin-bottom:18px}
@@ -123,15 +132,16 @@
   .places .lead{color:rgba(255,255,255,.75)}
   .place-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
   .place{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px}
-  .place .e{font-size:30px}
-  .place h3{font-size:18px;margin:10px 0 6px}
+  .place-grid{counter-reset:pl}
+  .place:before{counter-increment:pl;content:counter(pl,decimal-leading-zero);font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--accent2)}
+  .place h3{font-size:18px;margin:8px 0 6px}
   .place p{font-size:14px;color:rgba(255,255,255,.72)}
 
   /* 구매·렌탈 */
   .compare{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .plan{border-radius:var(--radius);padding:32px;border:2px solid var(--line);background:#fff}
   .plan.hot{border-color:var(--accent);position:relative}
-  .plan.hot:before{content:"초기 비용 부담 ↓";position:absolute;top:-14px;left:28px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px}
+  .plan.hot:before{content:"추천 · 총비용 가장 낮음";position:absolute;top:-14px;left:28px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px}
   .plan h3{font-size:24px;color:var(--navy)}
   .plan .for{color:var(--sub);margin:6px 0 18px}
   .plan dl{display:grid;grid-template-columns:96px 1fr;gap:10px 14px;font-size:15px}
@@ -156,7 +166,11 @@
 
   /* 대표 제품 */
   .prod-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-  .prod-img{width:100%;height:auto;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .prod-stage{position:relative;margin:0;background:linear-gradient(170deg,#eef2f8 0%,#f8fafc 60%,#e8edf5 100%);border-radius:28px;padding:44px 60px 50px;display:flex;justify-content:center}
+  .prod-stage img{width:auto;max-height:520px;height:auto;filter:drop-shadow(0 24px 30px rgba(15,42,74,.22))}
+  .prod-stage .dim{position:absolute;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--sub)}
+  .prod-stage .dim.h{right:18px;top:50%;writing-mode:vertical-rl}
+  .prod-stage .dim.w{bottom:16px;left:50%;transform:translateX(-50%)}
   .feat{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}
   .feat li{background:var(--soft);border-radius:14px;padding:14px 16px}
   .feat b{display:block;color:var(--navy);font-size:16px}
@@ -167,11 +181,14 @@
   .spec small{color:var(--sub)}
   /* 설치 사례 */
   .cases{background:var(--soft)}
-  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
-  .case{margin:0;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(15,42,74,.08)}
-  .case img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block}
-  .case figcaption{padding:10px 14px;font-size:14px;font-weight:700;color:var(--navy)}
-  .case figcaption small{display:block;font-weight:400;color:var(--sub);font-size:12px}
+  .case-strip{margin-top:40px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .case-track{display:flex;gap:18px;width:max-content;animation:flow 50s linear infinite}
+  .case-strip:hover .case-track{animation-play-state:paused}
+  .case{margin:0;width:250px;flex:none;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(15,42,74,.07)}
+  .case img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;display:block}
+  .case figcaption{padding:12px 16px;font-size:14px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between;align-items:baseline}
+  .case figcaption small{font-weight:400;color:var(--sub);font-size:12px}
+  @media (prefers-reduced-motion:reduce){.case-track{animation:none}.case-strip{overflow-x:auto}}
   .src{margin-top:16px;font-size:13px;color:var(--sub);text-align:center}
 
   /* 계산기 */
@@ -191,7 +208,7 @@
   /* 결제 */
   .pay-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
   .pay-grid div{text-align:center;padding:26px 16px;border-radius:var(--radius);background:var(--soft)}
-  .pay-grid .e{font-size:34px}
+  .pay-grid .e{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--accent)}
   .pay-grid h3{font-size:17px;color:var(--navy);margin:8px 0 4px}
   .pay-grid p{font-size:14px;color:var(--sub)}
 
@@ -272,9 +289,10 @@
     section{padding:64px 0}
     .wrap{padding:0 16px}
     .hero{padding:56px 0 64px}
-    .hero-art .card{left:0}
+    .hero-prod{max-height:380px}
+    .hero-art .c1{left:0}.hero-art .c2{right:0}
     .grid3,.compare,.row,.steps,.feat{grid-template-columns:1fr}
-    .case-grid{grid-template-columns:1fr 1fr;gap:10px}
+    .case{width:200px}
     .worry-grid,.place-grid,.why-grid,.pay-grid{grid-template-columns:1fr 1fr;gap:10px}
     .worry-grid div,.place,.why-grid div{padding:18px}
     .calc-box,form{padding:22px}
@@ -319,21 +337,23 @@
     <div>
       <span class="eyebrow">VENDING MACHINE · BUY · RENTAL · INSTALL</span>
       <h1>남는 자리 한 칸이<br><em>24시간 매장</em>이 됩니다</h1>
-      <p class="sub">음료·커피·스낵·아이스크림 자판기부터 무인키오스크까지. 설치할 공간을 먼저 보고, 잘 팔릴 기종과 품목을 골라 드려요. 설치비는 무료이고, 구입·렌탈·임대 중 편한 방식으로 시작할 수 있어요.</p>
+      <p class="sub">음료·커피·스낵·아이스크림 자판기부터 무인키오스크까지. 설치할 공간을 먼저 보고, 잘 팔릴 기종과 품목을 골라 드려요. 설치비는 무료이고, 오래 쓸수록 이득인 구입을 중심으로 렌탈·임대도 함께 상담해요.</p>
       <div class="hero-btns">
         <a class="btn btn-main" href="#apply">내 공간 무료 상담받기 →</a>
-        <a class="btn btn-line" href="tel:01055773067">📞 010-5577-3067</a>
+        <a class="btn btn-line" href="tel:01055773067">010-5577-3067</a>
       </div>
       <div class="chips">
-        <span>🕒 24시간 무인 운영</span>
-        <span>💳 카드·간편결제</span>
-        <span>💰 설치비 0원 · 렌탈·임대 가능</span>
-        <span>📍 전국 17개 시·도 설치</span>
+        <span>24시간 무인 운영</span>
+        <span>카드 · 간편결제</span>
+        <span>구입 추천 · 렌탈 상담</span>
+        <span>전국 17개 시·도 설치</span>
       </div>
     </div>
     <div class="hero-art">
-      <img class="hero-photo" src="img/hero-machine.jpg" width="560" height="800" alt="호텔 라운지에 설치된 키오스크 결합형 스마트 자판기" fetchpriority="high">
-      <div class="card"><small>운영 시간</small><b>24시간 · 365일</b><small>사람 없이도 매출이 생겨요</small></div>
+      <div class="glow" aria-hidden="true"></div>
+      <img class="hero-prod" src="img/product.webp" width="483" height="758" alt="키오스크 결합형 스마트밴딩머신 제품 사진" fetchpriority="high">
+      <div class="card c1"><small>운영 시간</small><b>24시간 · 365일</b></div>
+      <div class="card c2"><small>설치비</small><b>0원</b></div>
     </div>
   </div>
 </section>
@@ -362,7 +382,10 @@
 <section id="product">
   <div class="wrap prod-grid">
     <div>
-      <img class="prod-img" src="img/product-size.jpg" width="900" height="900" loading="lazy" alt="스마트밴딩머신 크기 폭 95.5cm 높이 197cm, 키오스크 결제 화면과 배출구">
+      <figure class="prod-stage">
+        <img src="img/product.webp" width="483" height="758" loading="lazy" alt="스마트밴딩머신 크기 폭 95.5cm 높이 197cm">
+        <span class="dim h">H 197cm</span><span class="dim w">W 95.5cm</span>
+      </figure>
     </div>
     <div>
       <span class="eyebrow">MAIN PRODUCT</span>
@@ -393,15 +416,15 @@
     <h2>공간과 손님에 맞춰 고르는<br><em>자판기 종류</em></h2>
     <p class="lead">같은 자판기라도 놓는 곳에 따라 잘 팔리는 품목이 달라요. 아래에서 관심 있는 기종을 눌러 상담을 남겨 주세요.</p>
     <div class="grid3">
-      <div class="machine"><div class="ico">🥤</div><h3>음료 자판기</h3><p>캔·페트 음료, 생수, 이온음료. 가장 많이 찾는 기본 자판기예요.</p><ul><li>냉장 / 냉·온 겸용</li><li>사무실·공장·헬스장 인기</li></ul><a class="pick" href="#apply" data-machine="음료 자판기">이 기종 상담하기 →</a></div>
-      <div class="machine"><div class="ico">☕</div><h3>커피 자판기</h3><p>원두 커피, 라떼, 차, 코코아까지. 한 잔씩 바로 만들어 드려요.</p><ul><li>원두 / 믹스 방식 선택</li><li>대기 공간·병원·학원 인기</li></ul><a class="pick" href="#apply" data-machine="커피 자판기">이 기종 상담하기 →</a></div>
-      <div class="machine"><div class="ico">🍫</div><h3>스낵 자판기</h3><p>과자, 초콜릿, 컵라면, 간편식. 출출할 때 바로 꺼내 먹는 자판기.</p><ul><li>나선형 / 칸 방식</li><li>스터디카페·PC방·기숙사 인기</li></ul><a class="pick" href="#apply" data-machine="스낵 자판기">이 기종 상담하기 →</a></div>
-      <div class="machine"><div class="ico">🍦</div><h3>아이스크림 자판기</h3><p>냉동 보관이 되는 전용 자판기. 여름철 매출이 특히 좋아요.</p><ul><li>냉동 전용 설계</li><li>캠핑장·펜션·수영장 인기</li></ul><a class="pick" href="#apply" data-machine="아이스크림 자판기">이 기종 상담하기 →</a></div>
-      <div class="machine"><div class="ico">🧃</div><h3>복합 자판기</h3><p>음료와 스낵을 한 대에. 자리는 좁은데 품목은 다양하게 놓고 싶을 때.</p><ul><li>냉장 + 상온 칸 함께</li><li>작은 공간에 알맞음</li></ul><a class="pick" href="#apply" data-machine="복합 자판기">이 기종 상담하기 →</a></div>
-      <div class="machine"><div class="ico">🖥️</div><h3>무인키오스크 · 무인매장</h3><p>주문·결제 키오스크와 여러 대를 묶은 무인매장 구성까지 상담해요.</p><ul><li>무인 아이스크림·편의점형</li><li>소자본 무인창업</li></ul><a class="pick" href="#apply" data-machine="무인키오스크·무인매장">이 기종 상담하기 →</a></div>
-      <div class="machine"><div class="ico">🧴</div><h3>생활용품 · 잡화 자판기</h3><p>생수, 위생용품, 세차용품, 반려동물 간식처럼 그 공간에 꼭 필요한 물건을 팔아요.</p><ul><li>칸 크기 맞춤 구성</li><li>사우나·셀프세차장·숙박시설</li></ul><a class="pick" href="#apply" data-machine="생활용품·잡화 자판기">이 기종 상담하기 →</a></div>
-      <div class="machine"><div class="ico">✏️</div><h3>문구 자판기</h3><p>펜, 노트, 테이프 같은 문구를 24시간 판매. 문구점이 문 닫은 시간에도 팔려요.</p><ul><li>학교 앞·학원가</li><li>무인문구점 창업</li></ul><a class="pick" href="#apply" data-machine="문구 자판기">이 기종 상담하기 →</a></div>
-      <div class="machine"><div class="ico">📺</div><h3>광고형 스마트 자판기</h3><p>화면이 달린 자판기라 판매하지 않을 때는 매장 홍보 영상과 광고를 띄워요.</p><ul><li>원격 매출·재고 관리</li><li>로비·카페·병원 대기실</li></ul><a class="pick" href="#apply" data-machine="스마트밴딩머신(키오스크형)">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">DRINK</div><h3>음료 자판기</h3><p>캔·페트 음료, 생수, 이온음료. 가장 많이 찾는 기본 자판기예요.</p><ul><li>냉장 / 냉·온 겸용</li><li>사무실·공장·헬스장 인기</li></ul><a class="pick" href="#apply" data-machine="음료 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">COFFEE</div><h3>커피 자판기</h3><p>원두 커피, 라떼, 차, 코코아까지. 한 잔씩 바로 만들어 드려요.</p><ul><li>원두 / 믹스 방식 선택</li><li>대기 공간·병원·학원 인기</li></ul><a class="pick" href="#apply" data-machine="커피 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">SNACK</div><h3>스낵 자판기</h3><p>과자, 초콜릿, 컵라면, 간편식. 출출할 때 바로 꺼내 먹는 자판기.</p><ul><li>나선형 / 칸 방식</li><li>스터디카페·PC방·기숙사 인기</li></ul><a class="pick" href="#apply" data-machine="스낵 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">ICE CREAM</div><h3>아이스크림 자판기</h3><p>냉동 보관이 되는 전용 자판기. 여름철 매출이 특히 좋아요.</p><ul><li>냉동 전용 설계</li><li>캠핑장·펜션·수영장 인기</li></ul><a class="pick" href="#apply" data-machine="아이스크림 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">COMBO</div><h3>복합 자판기</h3><p>음료와 스낵을 한 대에. 자리는 좁은데 품목은 다양하게 놓고 싶을 때.</p><ul><li>냉장 + 상온 칸 함께</li><li>작은 공간에 알맞음</li></ul><a class="pick" href="#apply" data-machine="복합 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">KIOSK</div><h3>무인키오스크 · 무인매장</h3><p>주문·결제 키오스크와 여러 대를 묶은 무인매장 구성까지 상담해요.</p><ul><li>무인 아이스크림·편의점형</li><li>소자본 무인창업</li></ul><a class="pick" href="#apply" data-machine="무인키오스크·무인매장">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">GOODS</div><h3>생활용품 · 잡화 자판기</h3><p>생수, 위생용품, 세차용품, 반려동물 간식처럼 그 공간에 꼭 필요한 물건을 팔아요.</p><ul><li>칸 크기 맞춤 구성</li><li>사우나·셀프세차장·숙박시설</li></ul><a class="pick" href="#apply" data-machine="생활용품·잡화 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">STATIONERY</div><h3>문구 자판기</h3><p>펜, 노트, 테이프 같은 문구를 24시간 판매. 문구점이 문 닫은 시간에도 팔려요.</p><ul><li>학교 앞·학원가</li><li>무인문구점 창업</li></ul><a class="pick" href="#apply" data-machine="문구 자판기">이 기종 상담하기 →</a></div>
+      <div class="machine"><div class="ico">SIGNAGE</div><h3>광고형 스마트 자판기</h3><p>화면이 달린 자판기라 판매하지 않을 때는 매장 홍보 영상과 광고를 띄워요.</p><ul><li>원격 매출·재고 관리</li><li>로비·카페·병원 대기실</li></ul><a class="pick" href="#apply" data-machine="스마트밴딩머신(키오스크형)">이 기종 상담하기 →</a></div>
     </div>
   </div>
 </section>
@@ -413,18 +436,18 @@
     <h2>사람이 오래 머무는 곳이면<br>어디든 설치할 수 있어요</h2>
     <p class="lead">출입하는 사람 수, 머무는 시간, 주변 편의점 거리를 함께 보고 알맞은 기종을 추천해 드려요.</p>
     <div class="place-grid">
-      <div class="place"><div class="e">🏢</div><h3>사무실 · 오피스</h3><p>직원 복지용 음료·커피</p></div>
-      <div class="place"><div class="e">🏭</div><h3>공장 · 물류센터</h3><p>교대 근무, 야간에도 이용</p></div>
-      <div class="place"><div class="e">🏋️</div><h3>헬스장 · 필라테스</h3><p>물·이온음료·단백질 음료</p></div>
-      <div class="place"><div class="e">📚</div><h3>학원 · 스터디카페</h3><p>커피·스낵·간식</p></div>
-      <div class="place"><div class="e">🏠</div><h3>아파트 · 오피스텔</h3><p>공용 공간·커뮤니티 시설</p></div>
-      <div class="place"><div class="e">🏥</div><h3>병원 · 약국</h3><p>대기실 음료·커피</p></div>
-      <div class="place"><div class="e">⛺</div><h3>캠핑장 · 펜션 · 낚시터</h3><p>얼음·아이스크림·간식·복합</p></div>
-      <div class="place"><div class="e">🏫</div><h3>학교 · 관공서 · 역</h3><p>복도·로비·휴게 공간</p></div>
-      <div class="place"><div class="e">♨️</div><h3>사우나 · 찜질방</h3><p>음료·아이스크림·세면용품</p></div>
-      <div class="place"><div class="e">🎮</div><h3>PC방 · 노래방 · 당구장</h3><p>음료·컵라면·스낵</p></div>
-      <div class="place"><div class="e">🚗</div><h3>셀프세차장 · 빨래방</h3><p>세차용품·세제·음료</p></div>
-      <div class="place"><div class="e">🏨</div><h3>호텔 · 숙박시설</h3><p>어메니티·음료·야식</p></div>
+      <div class="place"><h3>사무실 · 오피스</h3><p>직원 복지용 음료·커피</p></div>
+      <div class="place"><h3>공장 · 물류센터</h3><p>교대 근무, 야간에도 이용</p></div>
+      <div class="place"><h3>헬스장 · 필라테스</h3><p>물·이온음료·단백질 음료</p></div>
+      <div class="place"><h3>학원 · 스터디카페</h3><p>커피·스낵·간식</p></div>
+      <div class="place"><h3>아파트 · 오피스텔</h3><p>공용 공간·커뮤니티 시설</p></div>
+      <div class="place"><h3>병원 · 약국</h3><p>대기실 음료·커피</p></div>
+      <div class="place"><h3>캠핑장 · 펜션 · 낚시터</h3><p>얼음·아이스크림·간식·복합</p></div>
+      <div class="place"><h3>학교 · 관공서 · 역</h3><p>복도·로비·휴게 공간</p></div>
+      <div class="place"><h3>사우나 · 찜질방</h3><p>음료·아이스크림·세면용품</p></div>
+      <div class="place"><h3>PC방 · 노래방 · 당구장</h3><p>음료·컵라면·스낵</p></div>
+      <div class="place"><h3>셀프세차장 · 빨래방</h3><p>세차용품·세제·음료</p></div>
+      <div class="place"><h3>호텔 · 숙박시설</h3><p>어메니티·음료·야식</p></div>
     </div>
   </div>
 </section>
@@ -435,15 +458,21 @@
     <span class="eyebrow">INSTALLATION</span>
     <h2>호텔부터 학교까지,<br><em>실제 설치된 모습</em>이에요</h2>
     <p class="lead">공간 분위기를 해치지 않는 깔끔한 화이트 디자인이라 로비·카페·학교 어디에나 잘 어울려요.</p>
-    <div class="case-grid">
+  </div>
+  <div class="case-strip"><div class="case-track">
       <figure class="case"><img src="img/case-cafe-sokcho.jpg" loading="lazy" width="602" height="602" alt="카페에 나란히 설치된 스마트 자판기 두 대"><figcaption>카페<small>강원 속초</small></figcaption></figure>
       <figure class="case"><img src="img/case-hotel-jeju.jpg" loading="lazy" width="602" height="602" alt="호텔 로비에 설치된 스마트 자판기"><figcaption>호텔 로비<small>제주</small></figcaption></figure>
       <figure class="case"><img src="img/case-school.jpg" loading="lazy" width="602" height="602" alt="학교 휴게 공간에 설치된 스마트 자판기"><figcaption>학교<small>휴게 공간</small></figcaption></figure>
       <figure class="case"><img src="img/case-cafe.jpg" loading="lazy" width="602" height="602" alt="커피 매장 입구에 설치된 스마트 자판기"><figcaption>커피 매장<small>입구</small></figcaption></figure>
       <figure class="case"><img src="img/case-cafe-andong.jpg" loading="lazy" width="602" height="602" alt="카페에 설치된 스마트 자판기"><figcaption>카페<small>경북 안동</small></figcaption></figure>
       <figure class="case"><img src="img/case-adventure.jpg" loading="lazy" width="602" height="602" alt="실내 체험 시설에 설치된 스마트 자판기"><figcaption>실내 체험 시설<small>경기 양주</small></figcaption></figure>
-    </div>
-  </div>
+      <figure class="case" aria-hidden="true"><img src="img/case-cafe-sokcho.jpg" loading="lazy" width="602" height="602" alt="카페에 나란히 설치된 스마트 자판기 두 대"><figcaption>카페<small>강원 속초</small></figcaption></figure>
+      <figure class="case" aria-hidden="true"><img src="img/case-hotel-jeju.jpg" loading="lazy" width="602" height="602" alt="호텔 로비에 설치된 스마트 자판기"><figcaption>호텔 로비<small>제주</small></figcaption></figure>
+      <figure class="case" aria-hidden="true"><img src="img/case-school.jpg" loading="lazy" width="602" height="602" alt="학교 휴게 공간에 설치된 스마트 자판기"><figcaption>학교<small>휴게 공간</small></figcaption></figure>
+      <figure class="case" aria-hidden="true"><img src="img/case-cafe.jpg" loading="lazy" width="602" height="602" alt="커피 매장 입구에 설치된 스마트 자판기"><figcaption>커피 매장<small>입구</small></figcaption></figure>
+      <figure class="case" aria-hidden="true"><img src="img/case-cafe-andong.jpg" loading="lazy" width="602" height="602" alt="카페에 설치된 스마트 자판기"><figcaption>카페<small>경북 안동</small></figcaption></figure>
+      <figure class="case" aria-hidden="true"><img src="img/case-adventure.jpg" loading="lazy" width="602" height="602" alt="실내 체험 시설에 설치된 스마트 자판기"><figcaption>실내 체험 시설<small>경기 양주</small></figcaption></figure>
+  </div></div>
 </section>
 
 <!-- 구매·렌탈 -->
@@ -451,9 +480,9 @@
   <div class="wrap center">
     <span class="eyebrow">BUY · RENTAL · LEASE</span>
     <h2>구입·렌탈·임대, <em>상황에 맞게</em> 고르세요</h2>
-    <p class="lead">세 방식 모두 <b>설치비는 무료</b>예요. 예산과 운영 계획을 들어 보고 더 맞는 쪽을 솔직하게 알려 드립니다.</p>
+    <p class="lead">세 방식 모두 <b>설치비는 무료</b>예요. 렌탈료는 매달 계속 나가기 때문에, 1년 이상 운영할 자리라면 <b>구입이 총비용이 가장 낮아요.</b></p>
     <div class="compare" style="text-align:left">
-      <div class="plan">
+      <div class="plan hot">
         <h3>💰 구입</h3>
         <p class="for">오래 운영할 계획이고, 내 자산으로 갖고 싶다면</p>
         <dl>
@@ -463,12 +492,12 @@
           <dt>잘 맞는 분</dt><dd>자판기 사업을 길게 보는 분, 여러 대 운영</dd>
         </dl>
       </div>
-      <div class="plan hot">
+      <div class="plan">
         <h3>📅 렌탈</h3>
         <p class="for">목돈 없이 매달 나눠서 시작하고 싶다면</p>
         <dl>
           <dt>초기 비용</dt><dd>적거나 거의 없음 (조건에 따라 다름)</dd>
-          <dt>매달 비용</dt><dd>정해진 렌탈료</dd>
+          <dt>매달 비용</dt><dd>계약 기간 내내 렌탈료가 나감</dd>
           <dt>관리</dt><dd>계약에 따라 점검·수리 포함 가능</dd>
           <dt>잘 맞는 분</dt><dd>첫 자판기, 매달 나눠 내고 싶은 분</dd>
         </dl>
@@ -496,7 +525,7 @@
     <div class="why-grid">
       <div><span class="n">01</span><h3>공간부터 봐요</h3><p>무작정 기계를 권하지 않아요. 설치할 곳의 사람 흐름을 먼저 보고 맞는 기종을 골라요.</p></div>
       <div><span class="n">02</span><h3>팔리는 품목 구성</h3><p>장소마다 잘 나가는 상품이 달라요. 처음 채울 품목과 가격대를 함께 짜 드려요.</p></div>
-      <div><span class="n">03</span><h3>설치비 0원, 방식은 자유</h3><p>설치비는 무료이고, 구입·렌탈·임대 중 내 상황에 더 유리한 방식을 비교해 드려요.</p></div>
+      <div><span class="n">03</span><h3>설치비 0원, 내 자산으로</h3><p>설치비는 무료예요. 렌탈료 대신 한 번 구입해서 내 자판기로 오래 운영하도록 도와드려요.</p></div>
       <div><span class="n">04</span><h3>설치 후에도 함께</h3><p>고장 대응, 기기 교체·이전 설치는 물론, 상품 보충까지 맡기는 위탁운영도 가능해요.</p></div>
     </div>
   </div>
@@ -552,10 +581,10 @@
     <h2>현금 없어도 OK, <em>멀리서도</em> 관리해요</h2>
     <p class="lead">요즘 손님은 대부분 카드나 휴대폰으로 결제해요. 기종에 따라 아래 기능을 함께 쓸 수 있어요.</p>
     <div class="pay-grid">
-      <div><div class="e">💳</div><h3>카드 결제</h3><p>신용·체크카드, 교통카드</p></div>
-      <div><div class="e">📱</div><h3>간편결제</h3><p>삼성페이·카카오페이·네이버페이·토스페이</p></div>
-      <div><div class="e">🔳</div><h3>QR 결제</h3><p>휴대폰으로 찍어서 결제</p></div>
-      <div><div class="e">📊</div><h3>원격 관리</h3><p>매출·재고를 휴대폰으로 확인</p></div>
+      <div><div class="e">CARD</div><h3>카드 결제</h3><p>신용·체크카드, 교통카드</p></div>
+      <div><div class="e">PAY</div><h3>간편결제</h3><p>삼성페이·카카오페이·네이버페이·토스페이</p></div>
+      <div><div class="e">QR</div><h3>QR 결제</h3><p>휴대폰으로 찍어서 결제</p></div>
+      <div><div class="e">REMOTE</div><h3>원격 관리</h3><p>매출·재고를 휴대폰으로 확인</p></div>
     </div>
   </div>
 </section>
@@ -580,7 +609,7 @@
     <div class="faq-list">
       <details><summary>자판기 한 대 놓는 데 자리가 얼마나 필요한가요?</summary><p>기종마다 달라요. 대표 제품인 스마트밴딩머신은 폭 95.5cm, 높이 197cm라 폭 1m 정도 자리와 콘센트 하나면 설치할 수 있어요. 바퀴형이라 놓은 뒤에도 위치를 옮기기 쉬워요. 들어가는 길(문 폭·엘리베이터)도 함께 확인해 드려요.</p></details>
       <details><summary>설치비가 따로 드나요?</summary><p>설치비는 무료예요. 기계는 구입·렌탈·임대 중에 고르시면 되고, 금액은 기종과 대수, 설치 조건에 따라 달라져서 현장을 확인한 뒤 견적을 드려요. 상담과 자리 분석도 무료입니다.</p></details>
-      <details><summary>구입·렌탈·임대 중 뭐가 더 좋아요?</summary><p>오래 운영할 자리라면 구입이 길게 볼 때 총비용이 낮고, 목돈이 부담되면 렌탈, 이 자리에서 팔릴지 먼저 시험해 보고 싶다면 임대가 잘 맞아요. 상담 때 견적을 나란히 비교해 드립니다.</p></details>
+      <details><summary>구입·렌탈·임대 중 뭐가 더 좋아요?</summary><p>1년 이상 운영할 자리라면 <b>구입을 추천해요.</b> 렌탈료가 매달 쌓이면 기간이 길수록 기계 값보다 많이 낼 수 있거든요. 그래도 목돈이 부담되면 렌탈, 이 자리에서 팔릴지 먼저 시험해 보고 싶다면 임대가 잘 맞아요. 상담 때 견적을 나란히 비교해 드립니다.</p></details>
       <details><summary>상품은 누가 채워 넣나요?</summary><p>직접 채우셔도 되고, 상품 보충까지 맡기는 위탁운영도 가능해요. 처음 채울 품목 구성과 가격은 함께 정해 드려요.</p></details>
       <details><summary>고장이 나면 어떻게 하나요?</summary><p>전화로 접수해 주시면 증상을 확인하고 수리를 연결해 드려요. 렌탈은 계약에 따라 점검·수리가 포함될 수 있어요.</p></details>
       <details><summary>자판기 사업에 허가나 신고가 필요한가요?</summary><p>파는 상품에 따라 다릅니다. 포장된 음료·과자만 판다면 비교적 간단하고, 커피처럼 그 자리에서 만드는 자판기는 영업 신고가 필요할 수 있어요. 상담 때 필요한 절차를 안내해 드려요.</p></details>
@@ -602,7 +631,7 @@
       <a class="big-tel" href="tel:01055773067">📞 010-5577-3067</a>
       <ul class="points">
         <li>상담·견적 무료</li>
-        <li>설치비 0원 · 구입·렌탈·임대 견적 비교</li>
+        <li>설치비 0원 · 구입 견적과 렌탈 비교</li>
         <li>설치 장소에 맞는 기종·품목 추천</li>
       </ul>
     </div>
