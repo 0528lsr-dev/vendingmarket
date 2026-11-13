@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>자판기 구매·렌탈·설치 상담 | 자판기마켓</title>
-<meta name="description" content="음료·커피·스낵·아이스크림 자판기와 무인키오스크 구입·렌탈·임대, 설치비 0원. 전국 17개 시·도 설치 상담. 설치 장소에 맞는 기종과 품목 구성, 카드 결제, 운영 관리까지 자판기마켓이 함께합니다. 상담 010-5577-3067">
-<meta name="keywords" content="자판기, 자판기 구매, 자판기 렌탈, 자판기 설치, 음료자판기, 커피자판기, 스낵자판기, 아이스크림자판기, 무인자판기, 무인키오스크, 무인창업, 자판기 창업">
+<meta name="description" content="음료·커피·스낵·아이스크림 자판기와 무인키오스크 구입(일시불·할부), 렌탈 대신 할부로 내 자판기. 설치비 0원. 전국 17개 시·도 설치 상담. 설치 장소에 맞는 기종과 품목 구성, 카드 결제, 운영 관리까지 자판기마켓이 함께합니다. 상담 010-5577-3067">
+<meta name="keywords" content="자판기, 자판기 구매, 자판기 할부, 자판기 렌탈, 자판기 설치, 음료자판기, 커피자판기, 스낵자판기, 아이스크림자판기, 무인자판기, 무인키오스크, 무인창업, 자판기 창업">
 <meta name="naver-site-verification" content="ad0c32b153affffc4c2415fab25f0c68dd69ee64" />
 <meta name="google-site-verification" content="cUo4ZzAgD52azNM2htVvWJ59VUhHQ5ghyeZK6kNiSxI" />
 <link rel="canonical" href="https://mooinstore.kr/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mooinstore.kr/">
 <meta property="og:title" content="자판기 구매·렌탈·설치 상담 | 자판기마켓">
-<meta property="og:description" content="빈 공간이 24시간 매장이 됩니다. 설치비 0원, 구입·렌탈·임대 모두 가능. 전국 무료 상담.">
+<meta property="og:description" content="빈 공간이 24시간 매장이 됩니다. 설치비 0원, 일시불·할부 구입. 렌탈 대신 할부로 내 자판기. 전국 무료 상담.">
 <meta property="og:site_name" content="자판기마켓">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://mooinstore.kr/img/og.jpg">
@@ -137,16 +137,20 @@
   .place h3{font-size:18px;margin:8px 0 6px}
   .place p{font-size:14px;color:rgba(255,255,255,.72)}
 
-  /* 구매·렌탈 */
+  /* 구입 */
   .compare{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .plan{border-radius:var(--radius);padding:32px;border:2px solid var(--line);background:#fff}
   .plan.hot{border-color:var(--accent);position:relative}
-  .plan.hot:before{content:"추천 · 총비용 가장 낮음";position:absolute;top:-14px;left:28px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px}
+  .plan.hot:before{content:"렌탈 대신 추천";position:absolute;top:-14px;left:28px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px}
   .plan h3{font-size:24px;color:var(--navy)}
   .plan .for{color:var(--sub);margin:6px 0 18px}
   .plan dl{display:grid;grid-template-columns:96px 1fr;gap:10px 14px;font-size:15px}
   .plan dt{font-weight:700;color:var(--navy)}
   .plan dd{color:var(--ink)}
+  .compare.two{grid-template-columns:1fr 1fr;max-width:900px;margin-left:auto;margin-right:auto}
+  .rent-box{max-width:900px;margin:20px auto 0;text-align:left;background:var(--soft);border-left:4px solid var(--accent);border-radius:14px;padding:20px 24px}
+  .rent-box b{color:var(--navy)}
+  .rent-box p{color:var(--sub);margin-top:6px;font-size:15px}
   .note{margin-top:18px;font-size:14px;color:var(--sub);text-align:center}
 
   /* 차별점 */
@@ -291,7 +295,7 @@
     .hero{padding:56px 0 64px}
     .hero-prod{max-height:380px}
     .hero-art .c1{left:0}.hero-art .c2{right:0}
-    .grid3,.compare,.row,.steps,.feat{grid-template-columns:1fr}
+    .grid3,.compare,.compare.two,.row,.steps,.feat{grid-template-columns:1fr}
     .case{width:200px}
     .worry-grid,.place-grid,.why-grid,.pay-grid{grid-template-columns:1fr 1fr;gap:10px}
     .worry-grid div,.place,.why-grid div{padding:18px}
@@ -318,7 +322,7 @@
       <a href="#cases">설치 사례</a>
       <a href="#machines">자판기 종류</a>
       <a href="#places">설치 장소</a>
-      <a href="#plans">구매·렌탈</a>
+      <a href="#plans">구입·할부</a>
       <a href="#faq">자주 묻는 질문</a>
       <a href="guide/">자판기 가이드</a>
     </nav>
@@ -337,7 +341,7 @@
     <div>
       <span class="eyebrow">VENDING MACHINE · BUY · RENTAL · INSTALL</span>
       <h1>남는 자리 한 칸이<br><em>24시간 매장</em>이 됩니다</h1>
-      <p class="sub">음료·커피·스낵·아이스크림 자판기부터 무인키오스크까지. 설치할 공간을 먼저 보고, 잘 팔릴 기종과 품목을 골라 드려요. 설치비는 무료이고, 오래 쓸수록 이득인 구입을 중심으로 렌탈·임대도 함께 상담해요.</p>
+      <p class="sub">음료·커피·스낵·아이스크림 자판기부터 무인키오스크까지. 설치할 공간을 먼저 보고, 잘 팔릴 기종과 품목을 골라 드려요. 설치비는 무료이고, 일시불이나 할부로 내 자판기를 구입할 수 있어요.</p>
       <div class="hero-btns">
         <a class="btn btn-main" href="#apply">내 공간 무료 상담받기 →</a>
         <a class="btn btn-line" href="tel:01055773067">010-5577-3067</a>
@@ -345,7 +349,7 @@
       <div class="chips">
         <span>24시간 무인 운영</span>
         <span>카드 · 간편결제</span>
-        <span>구입 추천 · 렌탈 상담</span>
+        <span>일시불 · 할부 구입</span>
         <span>전국 17개 시·도 설치</span>
       </div>
     </div>
@@ -359,8 +363,8 @@
 </section>
 
 <div class="band" aria-hidden="true"><div>
-  <span>음료 자판기</span><span>커피 자판기</span><span>스낵 자판기</span><span>아이스크림 자판기</span><span>복합 자판기</span><span>무인키오스크</span><span>구매 · 렌탈 · 설치 · 관리</span>
-  <span>음료 자판기</span><span>커피 자판기</span><span>스낵 자판기</span><span>아이스크림 자판기</span><span>복합 자판기</span><span>무인키오스크</span><span>구매 · 렌탈 · 설치 · 관리</span>
+  <span>음료 자판기</span><span>커피 자판기</span><span>스낵 자판기</span><span>아이스크림 자판기</span><span>복합 자판기</span><span>무인키오스크</span><span>일시불 · 할부 구입 · 설치 · 관리</span>
+  <span>음료 자판기</span><span>커피 자판기</span><span>스낵 자판기</span><span>아이스크림 자판기</span><span>복합 자판기</span><span>무인키오스크</span><span>일시불 · 할부 구입 · 설치 · 관리</span>
 </div></div>
 
 <!-- 고민 -->
@@ -370,7 +374,7 @@
     <h2>자판기, 알아보다가 <em>이런 고민</em> 하셨죠?</h2>
     <div class="worry-grid">
       <div>우리 가게(사무실)에 어떤 자판기가 맞는지 모르겠어요</div>
-      <div>사는 게 나은지, 렌탈이 나은지 헷갈려요</div>
+      <div>목돈이 부담되는데, 렌탈밖에 방법이 없나요?</div>
       <div>설치하면 실제로 얼마나 팔릴지 궁금해요</div>
       <div>고장 나거나 물건 채우는 건 누가 하나요?</div>
     </div>
@@ -475,45 +479,39 @@
   </div></div>
 </section>
 
-<!-- 구매·렌탈 -->
+<!-- 구입 (일시불·할부) -->
 <section id="plans">
   <div class="wrap center">
-    <span class="eyebrow">BUY · RENTAL · LEASE</span>
-    <h2>구입·렌탈·임대, <em>상황에 맞게</em> 고르세요</h2>
-    <p class="lead">세 방식 모두 <b>설치비는 무료</b>예요. 렌탈료는 매달 계속 나가기 때문에, 1년 이상 운영할 자리라면 <b>구입이 총비용이 가장 낮아요.</b></p>
-    <div class="compare" style="text-align:left">
-      <div class="plan hot">
-        <h3>💰 구입</h3>
-        <p class="for">오래 운영할 계획이고, 내 자산으로 갖고 싶다면</p>
+    <span class="eyebrow">HOW TO BUY</span>
+    <h2>일시불도, 할부도 OK<br><em>내 자판기로 구입</em>하세요</h2>
+    <p class="lead">자판기마켓은 <b>구입</b>으로 안내해 드려요. 설치비는 무료이고, 한 번에 내기 부담되면 할부로 나눠 낼 수 있어요.</p>
+    <div class="compare two" style="text-align:left">
+      <div class="plan">
+        <h3>💰 일시불 구입</h3>
+        <p class="for">한 번에 정리하고 깔끔하게 시작하고 싶다면</p>
         <dl>
-          <dt>초기 비용</dt><dd>기계 값을 한 번에 냄</dd>
-          <dt>매달 비용</dt><dd>렌탈료 없음</dd>
-          <dt>소유</dt><dd>내 자판기 (위치 옮기기·되팔기 자유)</dd>
-          <dt>잘 맞는 분</dt><dd>자판기 사업을 길게 보는 분, 여러 대 운영</dd>
+          <dt>내는 방법</dt><dd>기계 값을 한 번에</dd>
+          <dt>매달 비용</dt><dd>없음</dd>
+          <dt>소유</dt><dd>바로 내 자판기 (옮기기·되팔기 자유)</dd>
+          <dt>잘 맞는 분</dt><dd>여러 대 운영, 자판기 사업을 길게 보는 분</dd>
         </dl>
       </div>
-      <div class="plan">
-        <h3>📅 렌탈</h3>
+      <div class="plan hot">
+        <h3>📅 할부 구입</h3>
         <p class="for">목돈 없이 매달 나눠서 시작하고 싶다면</p>
         <dl>
-          <dt>초기 비용</dt><dd>적거나 거의 없음 (조건에 따라 다름)</dd>
-          <dt>매달 비용</dt><dd>계약 기간 내내 렌탈료가 나감</dd>
-          <dt>관리</dt><dd>계약에 따라 점검·수리 포함 가능</dd>
-          <dt>잘 맞는 분</dt><dd>첫 자판기, 매달 나눠 내고 싶은 분</dd>
-        </dl>
-      </div>
-      <div class="plan">
-        <h3>🧪 임대 · 대여</h3>
-        <p class="for">이 자리에서 팔릴지 먼저 시험해 보고 싶다면</p>
-        <dl>
-          <dt>초기 비용</dt><dd>가장 적음</dd>
-          <dt>철수</dt><dd>안 맞으면 빼기 쉬움</dd>
-          <dt>관리</dt><dd>조건에 따라 보충·관리 포함 가능</dd>
-          <dt>잘 맞는 분</dt><dd>처음 해 보는 자리, 짧게 운영해 볼 분</dd>
+          <dt>내는 방법</dt><dd>기계 값을 매달 나눠서</dd>
+          <dt>매달 비용</dt><dd>할부금 (기간에 따라 다름)</dd>
+          <dt>소유</dt><dd>할부가 끝나면 내 자판기</dd>
+          <dt>잘 맞는 분</dt><dd>첫 자판기, 매출로 할부금을 내고 싶은 분</dd>
         </dl>
       </div>
     </div>
-    <p class="note">※ 기종·대수·계약 기간에 따라 금액이 달라져요. 정확한 견적은 상담 때 바로 안내해 드립니다.</p>
+    <div class="rent-box">
+      <b>자판기 렌탈을 알아보고 계셨나요?</b>
+      <p>렌탈은 매달 돈을 내도 끝까지 내 것이 되지 않아요. <b>할부 구입</b>은 렌탈처럼 매달 나눠 내면서, 다 내고 나면 <b>내 자판기</b>가 돼요. 상담 때 렌탈과 할부를 나란히 비교해 드릴게요.</p>
+    </div>
+    <p class="note">※ 기종·대수·할부 기간에 따라 금액이 달라져요. 정확한 견적은 상담 때 바로 안내해 드립니다.</p>
   </div>
 </section>
 
@@ -525,7 +523,7 @@
     <div class="why-grid">
       <div><span class="n">01</span><h3>공간부터 봐요</h3><p>무작정 기계를 권하지 않아요. 설치할 곳의 사람 흐름을 먼저 보고 맞는 기종을 골라요.</p></div>
       <div><span class="n">02</span><h3>팔리는 품목 구성</h3><p>장소마다 잘 나가는 상품이 달라요. 처음 채울 품목과 가격대를 함께 짜 드려요.</p></div>
-      <div><span class="n">03</span><h3>설치비 0원, 내 자산으로</h3><p>설치비는 무료예요. 렌탈료 대신 한 번 구입해서 내 자판기로 오래 운영하도록 도와드려요.</p></div>
+      <div><span class="n">03</span><h3>설치비 0원, 내 자산으로</h3><p>설치비는 무료예요. 일시불이나 할부로 구입해서, 렌탈료 없이 내 자판기로 오래 운영하세요.</p></div>
       <div><span class="n">04</span><h3>설치 후에도 함께</h3><p>고장 대응, 기기 교체·이전 설치는 물론, 상품 보충까지 맡기는 위탁운영도 가능해요.</p></div>
     </div>
   </div>
@@ -539,7 +537,7 @@
     <div class="steps">
       <div class="step"><h3>상담 신청</h3><p>전화나 아래 신청서로 공간과 원하는 점을 알려 주세요.</p></div>
       <div class="step"><h3>공간 확인</h3><p>설치 위치, 전기, 크기, 이용하는 사람을 확인해요.</p></div>
-      <div class="step"><h3>기종·견적 제안</h3><p>알맞은 기종과 품목, 구매·렌탈 견적을 비교해 드려요.</p></div>
+      <div class="step"><h3>기종·견적 제안</h3><p>알맞은 기종과 품목, 일시불·할부 견적을 안내해 드려요.</p></div>
       <div class="step"><h3>설치 · 세팅</h3><p>자판기를 놓고 카드 결제·가격·상품을 세팅해요.</p></div>
       <div class="step"><h3>운영 · 관리</h3><p>운영 시작! 재고·점검·고장 문의는 계속 도와드려요.</p></div>
     </div>
@@ -557,7 +555,7 @@
         <div class="field"><label>하루 판매 개수 <output id="o1"></output></label><input type="range" id="r1" min="5" max="200" step="5" value="40"></div>
         <div class="field"><label>평균 판매 가격 <output id="o2"></output></label><input type="range" id="r2" min="500" max="5000" step="100" value="1500"></div>
         <div class="field"><label>상품 원가 비율 <output id="o3"></output></label><input type="range" id="r3" min="20" max="80" step="5" value="50"></div>
-        <div class="field"><label>한 달 고정비 (렌탈료·전기세 등) <output id="o4"></output></label><input type="range" id="r4" min="0" max="500000" step="10000" value="100000"></div>
+        <div class="field"><label>한 달 고정비 (할부금·전기세 등) <output id="o4"></output></label><input type="range" id="r4" min="0" max="500000" step="10000" value="100000"></div>
       </div>
       <div class="result">
         <small>한 달(30일) 예상 순수익</small>
@@ -608,10 +606,10 @@
     <div class="center"><span class="eyebrow">FAQ</span><h2>자주 묻는 질문</h2></div>
     <div class="faq-list">
       <details><summary>자판기 한 대 놓는 데 자리가 얼마나 필요한가요?</summary><p>기종마다 달라요. 대표 제품인 스마트밴딩머신은 폭 95.5cm, 높이 197cm라 폭 1m 정도 자리와 콘센트 하나면 설치할 수 있어요. 바퀴형이라 놓은 뒤에도 위치를 옮기기 쉬워요. 들어가는 길(문 폭·엘리베이터)도 함께 확인해 드려요.</p></details>
-      <details><summary>설치비가 따로 드나요?</summary><p>설치비는 무료예요. 기계는 구입·렌탈·임대 중에 고르시면 되고, 금액은 기종과 대수, 설치 조건에 따라 달라져서 현장을 확인한 뒤 견적을 드려요. 상담과 자리 분석도 무료입니다.</p></details>
-      <details><summary>구입·렌탈·임대 중 뭐가 더 좋아요?</summary><p>1년 이상 운영할 자리라면 <b>구입을 추천해요.</b> 렌탈료가 매달 쌓이면 기간이 길수록 기계 값보다 많이 낼 수 있거든요. 그래도 목돈이 부담되면 렌탈, 이 자리에서 팔릴지 먼저 시험해 보고 싶다면 임대가 잘 맞아요. 상담 때 견적을 나란히 비교해 드립니다.</p></details>
+      <details><summary>설치비가 따로 드나요?</summary><p>설치비는 무료예요. 기계는 일시불이나 할부로 구입하시면 되고, 금액은 기종과 대수, 설치 조건에 따라 달라져서 현장을 확인한 뒤 견적을 드려요. 상담과 자리 분석도 무료입니다.</p></details>
+      <details><summary>렌탈은 안 되나요?</summary><p>자판기마켓은 렌탈 대신 <b>할부 구입</b>을 권해 드려요. 렌탈처럼 매달 나눠 내는 건 같지만, 할부가 끝나면 자판기가 내 것이 되거든요. 1년 이상 운영할 자리라면 렌탈보다 부담이 적어요. 상담 때 두 방식을 숫자로 비교해 드릴게요.</p></details>
       <details><summary>상품은 누가 채워 넣나요?</summary><p>직접 채우셔도 되고, 상품 보충까지 맡기는 위탁운영도 가능해요. 처음 채울 품목 구성과 가격은 함께 정해 드려요.</p></details>
-      <details><summary>고장이 나면 어떻게 하나요?</summary><p>전화로 접수해 주시면 증상을 확인하고 수리를 연결해 드려요. 렌탈은 계약에 따라 점검·수리가 포함될 수 있어요.</p></details>
+      <details><summary>고장이 나면 어떻게 하나요?</summary><p>전화로 접수해 주시면 증상을 확인하고 수리를 연결해 드려요. 구입 후에도 고장 대응과 기기 이전 설치를 도와드려요.</p></details>
       <details><summary>자판기 사업에 허가나 신고가 필요한가요?</summary><p>파는 상품에 따라 다릅니다. 포장된 음료·과자만 판다면 비교적 간단하고, 커피처럼 그 자리에서 만드는 자판기는 영업 신고가 필요할 수 있어요. 상담 때 필요한 절차를 안내해 드려요.</p></details>
       <details><summary>전국 어디든 설치되나요?</summary><p>네, 전국 17개 시·도 어디든 방문 상담 후 설치해요. 섬이나 일부 산간 지역은 일정이 조금 더 걸릴 수 있어요.</p></details>
       <details><summary>쓰던 자판기가 있는데 바꿀 수 있나요?</summary><p>네. 현금만 되던 오래된 자판기를 카드 되는 기종으로 바꾸거나, 다른 자리로 옮겨 설치하거나, 한 대 더 늘리는 것도 상담해 드려요.</p></details>
@@ -631,7 +629,7 @@
       <a class="big-tel" href="tel:01055773067">📞 010-5577-3067</a>
       <ul class="points">
         <li>상담·견적 무료</li>
-        <li>설치비 0원 · 구입 견적과 렌탈 비교</li>
+        <li>설치비 0원 · 일시불·할부 견적 안내</li>
         <li>설치 장소에 맞는 기종·품목 추천</li>
       </ul>
     </div>
@@ -654,7 +652,7 @@
           </select></div>
         <div><label>원하는 방식</label>
           <select name="type">
-            <option>상담 후 결정</option><option>구입</option><option>렌탈</option><option>임대·대여</option>
+            <option>상담 후 결정</option><option>일시불 구입</option><option>할부 구입</option><option>렌탈 문의</option>
           </select></div>
       </div>
       <label>문의 내용</label>
@@ -673,14 +671,14 @@
     <div class="ft">
       <div>
         <div class="logo">자판기<b style="color:var(--accent2)">마켓</b></div>
-        <p>자판기 구매 · 렌탈 · 설치 · 운영 상담</p>
+        <p>자판기 구입 · 할부 · 설치 · 운영 상담</p>
         <p>대표번호 <a href="tel:01055773067">010-5577-3067</a></p>
       </div>
       <div class="ft-menu">
-        <a href="#product">대표 제품</a><a href="#cases">설치 사례</a><a href="#machines">자판기 종류</a><a href="#places">설치 장소</a><a href="#plans">구매·렌탈</a><a href="#calc">수익 계산</a><a href="#faq">자주 묻는 질문</a><a href="guide/">자판기 가이드</a><a href="#apply">상담 신청</a>
+        <a href="#product">대표 제품</a><a href="#cases">설치 사례</a><a href="#machines">자판기 종류</a><a href="#places">설치 장소</a><a href="#plans">구입·할부</a><a href="#calc">수익 계산</a><a href="#faq">자주 묻는 질문</a><a href="guide/">자판기 가이드</a><a href="#apply">상담 신청</a>
       </div>
     </div>
-    <p class="kw">음료자판기 · 커피자판기 · 스낵자판기 · 아이스크림자판기 · 복합자판기 · 무인자판기 · 자판기 구매 · 자판기 렌탈 · 자판기 설치 · 무인키오스크 · 무인창업</p>
+    <p class="kw">음료자판기 · 커피자판기 · 스낵자판기 · 아이스크림자판기 · 복합자판기 · 무인자판기 · 자판기 구매 · 자판기 할부 · 자판기 렌탈 · 자판기 설치 · 무인키오스크 · 무인창업</p>
     <p style="margin-top:14px">© 2026 자판기마켓. All rights reserved.</p>
   </div>
 </footer>
