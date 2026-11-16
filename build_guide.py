@@ -87,6 +87,11 @@ def build():
                 {'@type': 'ListItem', 'position': 1, 'name': '홈', 'item': SITE + '/'},
                 {'@type': 'ListItem', 'position': 2, 'name': '자판기 가이드', 'item': SITE + '/guide/'},
                 {'@type': 'ListItem', 'position': 3, 'name': p['title'], 'item': url}]}]}
+        # 본문에 <details><summary>질문</summary><p>답</p></details> 가 있으면 FAQPage 구조화 데이터 추가 (AI 검색용, 2026-11-16)
+        qa = re.findall(r'<details><summary>(.*?)</summary><p>(.*?)</p></details>', p['body'], re.S)
+        if qa:
+            strip = lambda t: html.unescape(re.sub(r'<[^>]+>', '', t)).strip()
+            ld['@graph'].append({'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': strip(q), 'acceptedAnswer': {'@type': 'Answer', 'text': strip(x)}} for q, x in qa]})
         others = [q for q in posts if q is not p]
         related = (others[i:] + others[:i])[:3]
         page = HEAD.format(title=e(p['title']) + ' | 자판기마켓', desc=e(p['description']), url=url, ogtype='article',

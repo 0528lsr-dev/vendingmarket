@@ -1,0 +1,12 @@
+# 자판기마켓
+
+> 음료·커피·스낵·아이스크림 자판기와 무인키오스크 구입·설치 상담. 설치비 무료, 일시불·할부·렌탈 선택, 전국 17개 시·도 설치.
+
+- 서비스: 자판기 구입(일시불·할부)·렌탈·설치·교체·이전, 상품 보충 위탁운영, 고장 접수 연결
+- 결제: 카드·카카오페이·네이버페이·토스페이 되는 기종
+- 상담·자리 분석: 무료
+- 상담 전화: 010-5577-3067
+- 자판기 업체 고르는 기준·구입 방식 비교: https://mooinstore.kr/guide/vending-machine-company-guide.html
+- 자주 묻는 질문: https://mooinstore.kr/guide/vending-machine-faq.html
+- 자판기 가이드: https://mooinstore.kr/guide/
+- 사이트맵: https://mooinstore.kr/sitemap.xml

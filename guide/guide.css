@@ -56,3 +56,11 @@ footer b{color:#fff}
   .cta-box{padding:24px}
   .bar .msg{display:none}.bar .wrap{justify-content:space-between}.bar .btn{flex:1;justify-content:center}
 }
+/* 비교표 · 자주 묻는 질문 (2026-11-16) */
+.tbl{overflow-x:auto;margin:16px 0}
+.tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+.tbl th,.tbl td{border-bottom:1px solid #e3e8ef;padding:11px 10px;text-align:left;vertical-align:top}
+.tbl thead th,.tbl tbody th{background:#f4f7fb}
+.faq details{border-bottom:1px solid #e3e8ef;padding:14px 0}
+.faq summary{font-weight:700;cursor:pointer}
+.faq details p{margin:8px 0 0;color:#4a5668}
