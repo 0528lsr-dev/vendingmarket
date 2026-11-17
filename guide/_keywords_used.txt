@@ -12,3 +12,4 @@
 2026-11-14	호텔 자판기	호텔 자판기, 로비에 두면 좋은 품목과 설치 포인트	hotel-vending-machine
 2026-11-15	평택 자판기	평택 자판기, 산업단지·신도시·항만 지역별 설치 포인트	pyeongtaek-vending-machine
 2026-11-16	자판기 한 대 수익 계산	자판기 한 대 수익 계산, 하루 판매량으로 월 순수익 따져보는 법	vending-profit-calculation
+2026-11-17	자판기 자리 얼마나 필요	자판기 자리 얼마나 필요할까, 폭·여유 공간·콘센트 확인법	vending-space-needed
