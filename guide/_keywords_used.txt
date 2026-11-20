@@ -15,3 +15,4 @@
 2026-11-17	자판기 자리 얼마나 필요	자판기 자리 얼마나 필요할까, 폭·여유 공간·콘센트 확인법	vending-space-needed
 2026-11-18	카드결제 자판기	카드결제 자판기, 현금 없는 시대에 꼭 확인할 것들	card-payment-vending-machine
 2026-11-19	병원 자판기	병원 자판기, 대기실·병동 앞에 둘 때 챙길 품목과 위치	hospital-vending-machine
+2026-11-20	자판기 겨울철 관리	자판기 겨울철 관리, 추워지기 전에 점검할 6가지	vending-winter-care
