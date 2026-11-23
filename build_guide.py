@@ -23,45 +23,17 @@ def load():
     return posts
 
 
-HEAD = '''<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title}</title>
-<meta name="description" content="{desc}">
-<link rel="canonical" href="{url}">
-<link rel="alternate" type="application/rss+xml" title="자판기마켓 자판기 가이드" href="https://mooinstore.kr/rss.xml">
-<meta property="og:type" content="{ogtype}">
-<meta property="og:title" content="{title}">
-<meta property="og:description" content="{desc}">
-<meta property="og:url" content="{url}">
-<meta property="og:site_name" content="자판기마켓">
-<meta property="og:locale" content="ko_KR">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='4' width='44' height='56' rx='6' fill='%230f2a4a'/%3E%3Crect x='16' y='10' width='22' height='34' rx='2' fill='%23ffb020'/%3E%3Crect x='42' y='14' width='6' height='10' rx='1' fill='%23fff'/%3E%3Crect x='16' y='48' width='32' height='6' rx='2' fill='%23fff'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{css}">
-{ld}
-</head>
-<body>
-<header><div class="wrap hd">
-  <a href="{home}" class="logo"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="4" width="44" height="56" rx="6" fill="#0f2a4a"/><rect x="16" y="10" width="22" height="34" rx="2" fill="#ffb020"/><rect x="42" y="14" width="6" height="10" rx="1" fill="#fff"/><rect x="16" y="48" width="32" height="6" rx="2" fill="#fff"/></svg>자판기<b>마켓</b></a>
-  <nav><a href="{home}">홈</a><a href="{guide}">자판기 가이드</a><a class="cta" href="{home}#apply">무료 상담</a></nav>
-</div></header>
-'''
+import sys
+sys.path.insert(0, ROOT)
+import layout  # 공통 머리·바닥 (2026-11-17 새 디자인)
 
-FOOT = '''<footer><div class="wrap">
-  <p><b>자판기마켓</b> · 자판기 구매 · 렌탈 · 설치 · 운영 상담 · 대표번호 <a href="tel:01055773067">{tel}</a></p>
-  <p><a href="{home}">홈</a> · <a href="{guide}">자판기 가이드</a> · <a href="{home}#apply">상담 신청</a></p>
-  <p>© 2026 자판기마켓. All rights reserved.</p>
-</div></footer>
-<div class="bar"><div class="wrap"><span class="msg"><b>우리 공간엔 어떤 자판기가 맞을까?</b> 무료로 상담받아 보세요</span><a class="t" href="tel:01055773067">📞 전화</a><a class="btn" href="{home}#apply">무료 상담</a></div></div>
-<script src="{visit}" defer></script>
-</body>
-</html>
-'''
+
+def page_head(title, desc, path, ld=None, ogtype='article'):
+    return layout.head(title, desc, path, 1, ld, ogtype, extra_css='guide.css') + layout.header(1, 'guide')
+
+
+def page_foot():
+    return layout.cta(1, 'guide') + layout.footer(1)
 
 
 def e(s):
@@ -94,45 +66,55 @@ def build():
             ld['@graph'].append({'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': strip(q), 'acceptedAnswer': {'@type': 'Answer', 'text': strip(x)}} for q, x in qa]})
         others = [q for q in posts if q is not p]
         related = (others[i:] + others[:i])[:3]
-        page = HEAD.format(title=e(p['title']) + ' | 자판기마켓', desc=e(p['description']), url=url, ogtype='article',
-                           css='guide.css', home='../', guide='./',
-                           ld='<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + '</script>')
-        page += f'''<main class="wrap art">
-  <p class="crumb"><a href="../">홈</a> › <a href="./">자판기 가이드</a> › {e(p["tag"])}</p>
+        page = page_head(p['title'] + ' | 자판기마켓', p['description'], f'guide/{p["slug"]}.html', [ld])
+        page += f'''<main>
+<section class="page-hero"><div class="wrap">
+  <p class="crumb"><a href="../">홈</a> <span>›</span> <a href="./">자판기 가이드</a> <span>›</span> {e(p["tag"])}</p>
+  <span class="eyebrow">{e(p["tag"])}</span>
   <h1>{e(p["title"])}</h1>
-  <p class="meta">{e(p["tag"])} · {p["date"]} · 자판기마켓</p>
-  <article>
+  <p class="meta">{p["date"]} · 자판기마켓</p>
+</div></section>
+<section class="art-sec"><div class="wrap">
+  <article class="prose">
 {p["body"]}
   </article>
-  <div class="cta-box">
-    <h2>우리 공간에 맞는 자판기, 무료로 상담받으세요</h2>
-    <p>설치할 장소와 원하는 점을 남겨 주시면 기종·품목·구매/렌탈 견적을 비교해 드려요.</p>
-    <div class="btns"><a class="btn" href="../?utm_source=guide#apply">무료 상담 신청 →</a><a class="btn line" href="tel:01055773067">📞 {TEL}</a></div>
-  </div>
   <h2 class="rel-h">함께 보면 좋은 글</h2>
   <div class="ggrid">{''.join(card(q, '') for q in related)}</div>
+</div></section>
 </main>
 '''
-        page += FOOT.format(tel=TEL, home='../', guide='./', visit='../visit.js')
+        page += page_foot()
         open(os.path.join(out, p['slug'] + '.html'), 'w', encoding='utf-8').write(page)
 
     # 목록
     desc = '자판기 설치 비용, 기종 고르기, 장소별 설치 팁, 자판기 창업 순서와 신고까지. 자판기마켓이 정리한 자판기 가이드 모음이에요.'
-    page = HEAD.format(title='자판기 가이드 — 설치 비용·기종·창업 정보 | 자판기마켓', desc=desc, url=SITE + '/guide/', ogtype='website',
-                       css='guide.css', home='../', guide='./', ld='')
-    page += f'''<main class="wrap art">
-  <p class="crumb"><a href="../">홈</a> › 자판기 가이드</p>
+    page = page_head('자판기 가이드 — 설치 비용·기종·창업 정보 | 자판기마켓', desc, 'guide/', None, 'website')
+    page += f'''<main>
+<section class="page-hero"><div class="wrap">
+  <p class="crumb"><a href="../">홈</a> <span>›</span> 자판기 가이드</p>
+  <span class="eyebrow">VENDING GUIDE</span>
   <h1>자판기 가이드</h1>
-  <p class="meta">{e(desc)}</p>
-  <div class="ggrid">{''.join(card(q, '') for q in posts)}</div>
+  <p class="lead">{e(desc)}</p>
+</div></section>
+<section><div class="wrap"><div class="ggrid" style="margin-top:0">{''.join(card(q, '') for q in posts)}</div></div></section>
 </main>
 '''
-    page += FOOT.format(tel=TEL, home='../', guide='./', visit='../visit.js')
+    page += page_foot()
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(page)
 
     # 사이트맵
     last = max(p['date'] for p in posts)
     urls = [(SITE + '/', last), (SITE + '/guide/', last)] + [(f'{SITE}/guide/{p["slug"]}.html', p['date']) for p in posts]
+    # 홈 외 고정 페이지 (build_site.py 가 만듦): 자판기 종류·설치 장소·지역
+    STATIC = '2026-11-17'
+    for f in ['machines.html', 'places/index.html', 'regions/index.html'] + sorted(
+            os.path.relpath(x, ROOT).replace(os.sep, '/') for x in glob.glob(os.path.join(ROOT, 'places', '*.html')) + glob.glob(os.path.join(ROOT, 'regions', '*.html'))):
+        if f.endswith('/index.html') and f not in ('places/index.html', 'regions/index.html'):
+            continue
+        if os.path.exists(os.path.join(ROOT, f)):
+            u = SITE + '/' + (f[:-10] if f.endswith('index.html') else f)
+            if all(u != x for x, _ in urls):
+                urls.append((u, STATIC))
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sm += ''.join(f'  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n' for u, d in urls) + '</urlset>\n'
     open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write(sm)
