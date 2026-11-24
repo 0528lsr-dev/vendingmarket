@@ -19,3 +19,4 @@
 2026-11-21	자판기 세금	자판기 세금, 부가세·소득세 신고 전에 알아둘 기본 흐름	vending-tax-guide
 2026-11-22	대전 자판기	대전 자판기, 연구단지·대학가·둔산 업무지구별 설치 포인트	daejeon-vending-machine
 2026-11-23	컵라면 자판기	컵라면 자판기, 어떤 장소에 놓고 어떻게 채울까	cup-ramen-vending-machine
+2026-11-24	캠핑장 자판기	캠핑장 자판기, 늦은 밤 찾는 품목과 놓을 자리 정리	camping-vending-machine
