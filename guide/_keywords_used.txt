@@ -21,3 +21,4 @@
 2026-11-23	컵라면 자판기	컵라면 자판기, 어떤 장소에 놓고 어떻게 채울까	cup-ramen-vending-machine
 2026-11-24	캠핑장 자판기	캠핑장 자판기, 늦은 밤 찾는 품목과 놓을 자리 정리	camping-vending-machine
 2026-11-25	자판기 유통기한 관리	자판기 유통기한 관리, 폐기 줄이는 점검 순서와 요령	vending-expiry-management
+2026-11-26	자판기 부업	자판기 부업, 직장인이 시간을 얼마나 쓰는지부터 따져보세요	vending-side-job
